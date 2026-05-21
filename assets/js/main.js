@@ -1,48 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Identifica o idioma
-    const pathName = window.location.pathname;
-    const lang = pathName.includes('/en/') ? 'en' : pathName.includes('/es/') ? 'es' : 'pt';
+    console.log("Script carregado. Iniciando busca de componentes...");
 
-    // 2. Caminho fixo e seguro: 
-    // Como o main.js está em /assets/js/, precisamos subir 2 níveis para a raiz
-    const caminhoComponents = '/emanuel-escultor/components/';
+    // Caminho absoluto usando o nome do seu repositório
+    const baseUrl = '/emanuel-escultor/'; 
 
-    // 3. Injeção Dinâmica
-    fetch(`${caminhoComponents}header.html`)
-        .then(response => {
-            if (!response.ok) throw new Error("Erro ao carregar header");
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('header-placeholder').innerHTML = html;
-            marcarLinkAtivo(lang);
-        })
-        .catch(err => console.error(err));
-
-    fetch(`${caminhoComponents}footer.html`)
-        .then(response => {
-            if (!response.ok) throw new Error("Erro ao carregar footer");
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('footer-placeholder').innerHTML = html;
-        })
-        .catch(err => console.error(err));
-});
-
-function marcarLinkAtivo(idiomaAtual) {const caminhoComponents = '/emanuel-escultor/components/';
-    const paginaAtual = window.location.pathname.split("/").pop() || 'index.html';
-    const linksMenu = document.querySelectorAll('.nav-links a');
-    
-    linksMenu.forEach(link => {
-        // Remove a lógica de path se necessário, comparando apenas o nome do arquivo
-        if (link.getAttribute('href') === paginaAtual) {
-            link.classList.add('active');
-        }
-    });
-
-    const botaoIdioma = document.getElementById(`lang-${idiomaAtual}`);
-    if (botaoIdioma) {
-        botaoIdioma.classList.add('active-lang');
+    function carregarComponente(url, elementoId) {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) throw new Error(`Erro ${response.status} ao carregar ${url}`);
+                return response.text();
+            })
+            .then(html => {
+                const el = document.getElementById(elementoId);
+                if (el) {
+                    el.innerHTML = html;
+                    console.log(`Sucesso: ${elementoId} carregado.`);
+                } else {
+                    console.error(`Erro: Elemento '${elementoId}' não encontrado no HTML.`);
+                }
+            })
+            .catch(err => console.error("Falha no fetch:", err));
     }
-}
+
+    // Carrega os arquivos
+    carregarComponente(baseUrl + 'components/header.html', 'header-placeholder');
+    carregarComponente(baseUrl + 'components/footer.html', 'footer-placeholder');
+});
