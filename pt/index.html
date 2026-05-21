@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,7 @@
       "@context": "https://schema.org",
       "@type": "VisualArtwork",
       "name": "Arte Monumental de Emanuel Nunes",
-      "image": "https://emanuelnunes.pt/assets/images/obra-benveartt.jpg",
+      "image": "https://emanuelnunes.pt/assets/images/og-image-preview.png",
       "description": "Esculturas contemporâneas em metal, aço inox e níquel de grande escala.",
       "creator": {
         "@type": "Person",
@@ -90,7 +90,7 @@
             box-shadow: 0 0 25px rgba(140, 115, 51, 0.25);
         }
 
-        /* --- HERO SECTION (A Obra Monumental na Construtora) --- */
+        /* --- HERO SECTION COM A IMAGEM UNIFICADA --- */
         .hero-monumental {
             height: 100vh;
             width: 100%;
@@ -98,7 +98,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(5, 5, 5, 0.4), rgba(5, 5, 5, 0.85)), url('../assets/images/obra-benveartt.jpg') no-repeat center center;
+            /* USA A IMAGEM GERADA ACIMA COMO FUNDO */
+            background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9)), url('../assets/images/og-image-preview.png') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
         }
@@ -217,7 +218,7 @@
                 <a href="obras.html" class="btn-premium" aria-label="Visualizar coleção completa de obras">Conhecer Obras</a>
             </div>
             <div class="conteudo-imagem">
-                <img src="../assets/images/obra-bailarina.jpg" alt="Escultura figurativa em metal da silhueta de uma bailarina em movimento pelo artista Emanuel Nunes">
+                <img src="../assets/images/og-image-preview.png" alt="Destaque da bailarina em movimento pelo artista Emanuel Nunes">
             </div>
         </section>
 
@@ -229,7 +230,7 @@
                 <a href="colecoes-privadas.html" class="btn-premium" aria-label="Solicitar acesso ao catálogo exclusivo e fechado">Solicitar Private View</a>
             </div>
             <div class="conteudo-imagem">
-                <img src="../assets/images/obra-niquel.jpg" alt="Escultura abstrata polida com acabamento espelhado em banho de níquel por Emanuel Nunes">
+                <img src="../assets/images/og-image-preview.png" alt="Destaque da escultura abstrata espelhada por Emanuel Nunes">
             </div>
         </section>
     </main>
