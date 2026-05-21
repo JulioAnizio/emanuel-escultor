@@ -5,6 +5,11 @@
             <p>Ateliê de Escultura Monumental & Design Contemporâneo</p>
         </div>
         
+        <div class="footer-links-uteis">
+            <a href="/mapa.html">Mapa</a>
+            <a href="/contato.html">Contato</a>
+        </div>
+
         <div class="footer-bloco-copyright">
             <p>&copy; 2026 Emanuel Nunes. Todos os direitos reservados.</p>
             <p class="desenvolvido-por">
@@ -48,6 +53,24 @@
         text-transform: uppercase;
     }
 
+    .footer-links-uteis {
+        display: flex;
+        gap: 20px;
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .footer-links-uteis a {
+        color: #555;
+        text-decoration: none;
+        transition: color 0.4s ease;
+    }
+
+    .footer-links-uteis a:hover {
+        color: #d4af37;
+    }
+
     .footer-bloco-copyright {
         text-align: right;
         font-size: 0.7rem;
@@ -55,14 +78,12 @@
         letter-spacing: 1px;
     }
 
-    /* Estilização refinada para a sua assinatura */
     .desenvolvido-por {
         font-size: 0.6rem;
         text-transform: uppercase;
         color: #333;
         margin-top: 6px;
         letter-spacing: 2px;
-        transition: color 0.4s ease;
     }
 
     .desenvolvido-por a {
@@ -73,7 +94,7 @@
     }
 
     .desenvolvido-por a:hover {
-        color: #d4af37; /* Acende em dourado ao passar o mouse */
+        color: #d4af37;
     }
 
     @media (max-width: 768px) {
@@ -83,5 +104,6 @@
             gap: 20px;
         }
         .footer-bloco-copyright { text-align: center; }
+        .footer-links-uteis { justify-content: center; }
     }
 </style>
