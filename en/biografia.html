@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>History & Trajectory | Emanuel Nunes — Monumental Sculptor</title>
+    <meta name="description" content="Discover the history, concept, and technical evolution of Emanuel Nunes. The international trajectory of a sculptor specializing in noble metals and large urban scales.">
+    <meta name="keywords" content="Emanuel Nunes biography, sculptor history, contemporary art exhibitions, Emanuel Nunes trajectory, Portuguese sculptor, monumental fine art">
+    <link rel="canonical" href="https://emanuelnunes.pt/en/biografia.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CORE CSS (MATCHING THE LUXURY SPECIFICATIONS) --- */
+        :root {
+            --preto-luxo: #050505;
+            --preto-suave: #0f0f0f;
+            --prata-escovado: #b5b5b7;
+            --dourado-brilhante: #d4af37;
+            --ouro-envelhecido: #8c7333;
+            --branco-puro: #ffffff;
+            
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Montserrat', sans-serif;
+            --transicao-seda: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--preto-luxo);
+            color: var(--prata-escovado);
+            font-family: var(--fonte-corpo);
+            font-weight: 300;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fonte-titulo);
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--branco-puro);
+        }
+
+        /* --- TRAJECTORY INTRODUCTION --- */
+        .bio-intro {
+            padding: 180px 8% 80px 8%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .bio-texto-bloco {
+            flex: 1.2;
+        }
+
+        .bio-texto-bloco .tag {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .bio-texto-bloco h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .bio-texto-bloco p {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .bio-texto-bloco p strong {
+            color: var(--branco-puro);
+            font-weight: 400;
+        }
+
+        .bio-perfil-img {
+            flex: 0.8;
+            border: 1px solid rgba(140, 115, 51, 0.2);
+            padding: 15px;
+            background: var(--preto-suave);
+        }
+
+        .bio-perfil-img img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: var(--transicao-seda);
+        }
+
+        .bio-perfil-img:hover img {
+            filter: grayscale(20%);
+            opacity: 1;
+        }
+
+        /* --- MINIMALIST TIMELINE --- */
+        .timeline-section {
+            background-color: var(--preto-suave);
+            padding: 100px 8%;
+            border-top: 1px solid rgba(224, 224, 224, 0.02);
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            margin-bottom: 80px;
+            font-size: 2rem;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Central vertical line */
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background-color: rgba(140, 115, 51, 0.3);
+            top: 0; bottom: 0; left: 50%;
+            margin-left: -0.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: transparent;
+            width: 50%;
+        }
+
+        /* Left and Right adjustments */
+        .timeline-item.esquerda { left: 0; text-align: right; }
+        .timeline-item.direita { left: 50%; text-align: left; }
+
+        /* Timeline circles */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 10px; height: 10px;
+            right: -5px;
+            background-color: var(--preto-luxo);
+            border: 2px solid var(--dourado-brilhante);
+            top: 15px; border-radius: 50%; z-index: 1;
+            transition: var(--transicao-seda);
+        }
+
+        .timeline-item.direita::after { left: -5px; }
+
+        .timeline-item:hover::after {
+            background-color: var(--dourado-brilhante);
+            box-shadow: 0 0 10px var(--dourado-brilhante);
+        }
+
+        .date-badge {
+            font-family: var(--fonte-titulo);
+            font-size: 1.4rem;
+            color: var(--dourado-brilhante);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-item h3 {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 992px) {
+            .bio-intro { flex-direction: column; padding: 120px 5% 60px 5%; gap: 50px; }
+            .bio-texto-bloco p { text-align: center; }
+            .bio-texto-bloco h1 { text-align: center; }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
+            .timeline-item.direita { left: 0; }
+            .timeline-item::after, .timeline-item.direita::after { left: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="bio-intro">
+            <div class="bio-texto-bloco">
+                <span class="tag">The Mind Behind the Metal</span>
+                <h1>The Philosophy of Volume and Space</h1>
+                <p>Born in Portugal and driven by a career fusing engineering precision with contemporary art sensibilities, the trajectory of <strong>Emanuel Nunes</strong> is a relentless pursuit of merging the physical mass of elements with the fluid movement of urban surroundings.</p>
+                <p>An expert in the surgical manipulation of <strong>Stainless Steel, Bronze, Marble, and complex Nickel plating treatments</strong>, Emanuel has forged an authoritative signature focused on large-scale and figurative sculptures that interact actively with their environments through absolute mirror polish finishes.</p>
+                <p>Today, his masterworks are divided between imposing monuments integrated into high-end corporate architecture and tightly restricted fine art private collections, establishing his name as a vital link between three-dimensional concepts and the landscape that hosts them.</p>
+            </div>
+            
+            <div class="bio-perfil-img">
+                <img src="../assets/images/emanuel-perfil.jpg" alt="Black and white portrait of sculptor Emanuel Nunes">
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2>Historical Milestones</h2>
+            
+            <div class="timeline-container">
+                
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">Origins</span>
+                    <h3>First Encounters with Form</h3>
+                    <p>Early technical studies in metallurgy, industrial drafting, and classical clay modeling in Europe, setting foundations for large structural manipulation.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">Expansion</span>
+                    <h3>Conquering Public Space</h3>
+                    <p>Developing and delivering monumental sculptures for institutional squares in European territory, testing for the first time the true limits of scale.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">Refinement</span>
+                    <h3>Stainless Steel & Nickel Mastery</h3>
+                    <p>Consolidating absolute mirror-polishing techniques. Light and environmental interaction become center elements, attracting high-end private collectors.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">Global Synergy</span>
+                    <h3>Integration with High Architecture</h3>
+                    <p>Definitive placement of monumental signature sculptures into structural facades and luxury corporate lobbies for vanguard development firms.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
