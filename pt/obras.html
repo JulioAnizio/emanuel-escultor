@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Acervo de Obras | Emanuel Nunes — Esculturas Contemporâneas</title>
+    <meta name="description" content="Conheça o catálogo de esculturas monumentais e obras públicas de Emanuel Nunes. Criações exclusivas em metal polido, inox e acabamentos espelhados de alto padrão.">
+    <meta name="keywords" content="Portfolio Emanuel Nunes, galeria de arte, esculturas em inox, monumentos publicos, arte contemporanea metal, Itajai arte">
+    <link rel="canonical" href="https://emanuelnunes.pt/pt/obras.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS BASE & ACABAMENTO DE GALERIA --- */
+        :root {
+            --preto-luxo: #050505;
+            --preto-suave: #0f0f0f;
+            --prata-escovado: #b5b5b7;
+            --dourado-brilhante: #d4af37;
+            --ouro-envelhecido: #8c7333;
+            --branco-puro: #ffffff;
+            
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Montserrat', sans-serif;
+            --transicao-seda: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--preto-luxo);
+            color: var(--prata-escovado);
+            font-family: var(--fonte-corpo);
+            font-weight: 300;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-family: var(--fonte-titulo);
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--branco-puro);
+        }
+
+        /* --- CONTAINER PRINCIPAL --- */
+        .portfolio-header {
+            padding: 160px 8% 40px 8%;
+            text-align: center;
+        }
+
+        .portfolio-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-header p {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* --- FILTROS DE CATEGORIA --- */
+        .filtro-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .filtro-btn {
+            background: transparent;
+            border: none;
+            color: #555;
+            font-family: var(--fonte-corpo);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding-bottom: 6px;
+            border-bottom: 1px solid transparent;
+            transition: var(--transicao-seda);
+        }
+
+        .filtro-btn:hover, .filtro-btn.ativo {
+            color: var(--dourado-brilhante);
+            border-bottom: 1px solid var(--ouro-envelhecido);
+        }
+
+        /* --- GRID ASSEMITRICO (ESTILO MUSEU) --- */
+        .galeria-grid {
+            padding: 0 8% 120px 8%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+        }
+
+        .obra-item {
+            grid-column: span 4; /* Padrão ocupa 4 de 12 colunas */
+            background-color: var(--preto-suave);
+            border: 1px solid rgba(224, 224, 224, 0.02);
+            overflow: hidden;
+            transition: var(--transicao-seda);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Variações de tamanho para quebrar a simetria de forma elegante */
+        .obra-item.monumental { grid-column: span 8; } /* Obras maiores ocupam 8 colunas */
+        .obra-item.vertical { grid-row: span 2; }
+
+        .obra-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        .obra-wrapper-img {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* Ajustes de proporção baseados na classe */
+        .obra-item.vertical .obra-wrapper-img { height: 600px; }
+        .obra-item.monumental .obra-wrapper-img { height: 450px; }
+        .obra-item .obra-wrapper-img { height: 350px; }
+
+        .obra-wrapper-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: transform 1.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.8s ease;
+        }
+
+        .obra-item:hover .obra-wrapper-img img {
+            transform: scale(1.03);
+            opacity: 0.95;
+        }
+
+        .obra-info {
+            padding: 25px 20px;
+            background: var(--preto-suave);
+            border-top: 1px solid rgba(140, 115, 51, 0.05);
+        }
+
+        .obra-info h2 {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            color: var(--branco-puro);
+        }
+
+        .obra-meta {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--ouro-envelhecido);
+        }
+
+        /* Ocultar elementos filtrados */
+        .obra-item.oculto {
+            display: none;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 1024px) {
+            .obra-item, .obra-item.monumental { grid-column: span 6; }
+        }
+
+        @media (max-width: 768px) {
+            .filtro-container { flex-wrap: wrap; gap: 15px; }
+            .galeria-grid { grid-template-columns: 1fr; padding: 0 5% 80px 5%; gap: 30px; }
+            .obra-item, .obra-item.monumental { grid-column: span 12; }
+            .obra-wrapper-img, .obra-item.vertical .obra-wrapper-img, .obra-item.monumental .obra-wrapper-img { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="portfolio-header">
+            <h1>Acervo & Obras</h1>
+            <p>A manifestação tridimensional da forma através dos tempos e dos elementos nobres</p>
+            
+            <div class="filtro-container" role="tablist">
+                <button class="filtro-btn ativo" onclick="filtrarObras('todas')">Todas as Peças</button>
+                <button class="filtro-btn" onclick="filtrarObras('inox')">Aço Inox</button>
+                <button class="filtro-btn" onclick="filtrarObras('niquel')">Banho de Níquel</button>
+                <button class="filtro-btn" onclick="filtrarObras('monumental')">Escala Monumental</button>
+            </div>
+        </section>
+
+        <div class="galeria-grid">
+            
+            <article class="obra-item monumental" data-material="monumental">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra-benveartt.jpg" alt="Escultura monumental instalada em fachada corporativa de alto padrão por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Evolução Urbana</h2>
+                    <span class="obra-meta">Aço Inox Polido — Escala Monumental</span>
+                </div>
+            </article>
+
+            <article class="obra-item vertical" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra-bailarina.jpg" alt="Escultura em linhas fluidas representando movimento e leveza em aço inox por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>A Bailarina</h2>
+                    <span class="obra-meta">Aço Inox Escovado — Linhas Orgânicas</span>
+                </div>
+            </article>
+
+            <article class="obra-item" data-material="niquel">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra-niquel.jpg" alt="Obra de arte abstrata espelhada com acabamento em banho químico de níquel por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Reflexos do Eu</h2>
+                    <span class="obra-meta">Metal Maciço — Banho de Níquel</span>
+                </div>
+            </article>
+
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra-benveartt.jpg" alt="Escultura de luxo geométrica em aço inox polido por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Simetria Oculta</h2>
+                    <span class="obra-meta">Aço Inox Espelhado</span>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // Função de filtro ultra veloz nativa para manter performance 100% no Google
+        function filtrarObras(categoria) {
+            // Ajustar visual dos botões
+            const botoes = document.querySelectorAll('.filtro-btn');
+            botoes.forEach(btn => btn.classList.remove('ativo'));
+            event.target.classList.add('active'); // Corrige classe ativa temporária
+
+            // Filtragem dos itens no DOM
+            const itens = document.querySelectorAll('.obra-item');
+            itens.forEach(item => {
+                const material = item.getAttribute('data-material');
+                if (categoria === 'todas' || material === categoria) {
+                    item.classList.remove('oculto');
+                } else {
+                    item.classList.add('oculto');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
