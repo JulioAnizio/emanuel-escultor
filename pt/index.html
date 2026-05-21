@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Emanuel Nunes | Escultura Monumental & Arte de Luxo Contemporânea</title>
+    <meta name="description" content="Explore a arte monumental de Emanuel Nunes. Esculturas exclusivas em aço inox, níquel e bronze que fundem fluidez, movimento e arquitetura de alto padrão.">
+    <meta name="keywords" content="Emanuel Nunes, escultor, escultura monumental, arte contemporanea, aco inox, banho de niquel, benveartt construtora, arquitetura de luxo, arte corporativa, colecionadores privados">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://emanuelnunes.pt/pt/index.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://emanuelnunes.pt/pt/index.html">
+    <meta property="og:title" content="Emanuel Nunes | Escultura Monumental & Arte de Luxo">
+    <meta property="og:description" content="Obras de arte imponentes em metal polido que transformam espaços urbanos e acervos particulares.">
+    <meta property="og:image" content="https://emanuelnunes.pt/assets/images/og-image-preview.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VisualArtwork",
+      "name": "Arte Monumental de Emanuel Nunes",
+      "image": "https://emanuelnunes.pt/assets/images/obra-benveartt.jpg",
+      "description": "Esculturas contemporâneas em metal, aço inox e níquel de grande escala.",
+      "creator": {
+        "@type": "Person",
+        "name": "Emanuel Nunes",
+        "jobTitle": "Sculptor",
+        "sameAs": "https://instagram.com/emanuelnunesescultor"
+      },
+      "material": "Stainless Steel, Nickel, Bronze"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS BASE & PALETA DE LUXO --- */
+        :root {
+            --preto-luxo: #050505;
+            --preto-suave: #0f0f0f;
+            --prata-escovado: #b5b5b7;
+            --dourado-brilhante: #d4af37;
+            --ouro-envelhecido: #8c7333;
+            --branco-puro: #ffffff;
+            
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Montserrat', sans-serif;
+            --transicao-seda: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--preto-luxo);
+            color: var(--prata-escovado);
+            font-family: var(--fonte-corpo);
+            font-weight: 300;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fonte-titulo);
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--branco-puro);
+        }
+
+        /* --- BOTÃO PREMIUM --- */
+        .btn-premium {
+            display: inline-block;
+            padding: 16px 40px;
+            border: 1px solid var(--ouro-envelhecido);
+            color: var(--ouro-envelhecido);
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: var(--transicao-seda);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .btn-premium:hover {
+            background-color: var(--ouro-envelhecido);
+            color: var(--preto-luxo);
+            box-shadow: 0 0 25px rgba(140, 115, 51, 0.25);
+        }
+
+        /* --- HERO SECTION (A Obra Monumental na Construtora) --- */
+        .hero-monumental {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(5, 5, 5, 0.4), rgba(5, 5, 5, 0.85)), url('../assets/images/obra-benveartt.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 0 20px;
+            z-index: 10;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero-content p {
+            font-size: 0.85rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            color: var(--prata-escovado);
+        }
+
+        /* --- SEÇÕES DE CONTEÚDO (Visual Assimétrico de Galeria) --- */
+        .secao-luxo {
+            padding: 140px 8%;
+            display: flex;
+            align-items: center;
+            gap: 100px;
+            background-color: var(--preto-luxo);
+        }
+
+        .secao-luxo.inversa {
+            flex-direction: row-reverse;
+            background-color: var(--preto-suave);
+        }
+
+        .conteudo-texto { flex: 1; }
+
+        .conteudo-texto .tag {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .conteudo-texto h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+
+        .conteudo-texto p {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+
+        .conteudo-imagem {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+            border: 1px solid rgba(224, 224, 224, 0.03);
+        }
+
+        .conteudo-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.8;
+            transition: transform 1.8s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 1s ease;
+        }
+
+        .conteudo-imagem:hover img {
+            transform: scale(1.04);
+            opacity: 1;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .secao-luxo, .secao-luxo.inversa {
+                flex-direction: column;
+                padding: 80px 5%;
+                gap: 50px;
+                text-align: center;
+            }
+            .conteudo-texto p { text-align: center; }
+            .hero-monumental { background-attachment: scroll; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <section class="hero-monumental" aria-label="Introdução Emanuel Nunes">
+            <div class="hero-content">
+                <h1>Arte que molda o espaço</h1>
+                <p>Esculturas Monumentais em Aço e Metal</p>
+                <a href="mapa.html" class="btn-premium" aria-label="Navegar para a trilha geográfica do artista">Ver Trilha do Artista</a>
+            </div>
+        </section>
+
+        <section class="secao-luxo">
+            <div class="conteudo-texto">
+                <span class="tag">Fluidez & Técnica</span>
+                <h2>A leveza oculta no metal rígido</h2>
+                <p>O trabalho de Emanuel Nunes desafia a própria natureza dos materiais. Suas criações cortam, dobram e texturizam metais nobres para extrair dinamismo e linhas orgânicas que parecem flutuar no espaço urbano ou em acervos privados.</p>
+                <a href="obras.html" class="btn-premium" aria-label="Visualizar coleção completa de obras">Conhecer Obras</a>
+            </div>
+            <div class="conteudo-imagem">
+                <img src="../assets/images/obra-bailarina.jpg" alt="Escultura figurativa em metal da silhueta de uma bailarina em movimento pelo artista Emanuel Nunes">
+            </div>
+        </section>
+
+        <section class="secao-luxo inversa">
+            <div class="conteudo-texto">
+                <span class="tag">Acabamento Premium</span>
+                <h2>A perfeição do espelhamento</h2>
+                <p>Muito além da forma volumosa, a assinatura visual reside na obsessão pelo polimento e tratamentos de superfície químicos refinados, como o banho de Níquel e o manuseio cirúrgico do Inox. Luz e reflexo passam a fazer parte ativa da escultura.</p>
+                <a href="colecoes-privadas.html" class="btn-premium" aria-label="Solicitar acesso ao catálogo exclusivo e fechado">Solicitar Private View</a>
+            </div>
+            <div class="conteudo-imagem">
+                <img src="../assets/images/obra-niquel.jpg" alt="Escultura abstrata polida com acabamento espelhado em banho de níquel por Emanuel Nunes">
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('../components/header.html')
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('header-placeholder').innerHTML = html;
+                    const paginaAtual = window.location.pathname.split("/").pop() || 'index.html';
+                    const links = document.querySelectorAll('.nav-links a');
+                    links.forEach(link => {
+                        if (link.getAttribute('href') === paginaAtual) link.classList.add('active');
+                    });
+                    document.getElementById('lang-pt')?.classList.add('active-lang');
+                }).catch(err => console.error("Erro no header:", err));
+
+            fetch('../components/footer.html')
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                }).catch(err => console.error("Erro no footer:", err));
+        });
+    </script>
+</body>
+</html>
