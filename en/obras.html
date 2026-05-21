@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>The Collection | Monumental Sculptures — Emanuel Nunes</title>
+    <meta name="description" content="Discover the international collection of fine art sculptures by Emanuel Nunes. Large-scale contemporary artworks engineered in premium stainless steel and nickel.">
+    <meta name="keywords" content="Emanuel Nunes collection, metal sculptures portfolio, monumental public art, contemporary curators, luxury interior sculptures">
+    <link rel="canonical" href="https://emanuelnunes.pt/en/obras.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CORE CSS (MATCHING THE LUXURY SPECIFICATIONS) --- */
+        :root {
+            --preto-luxo: #050505;
+            --preto-suave: #0f0f0f;
+            --prata-escovado: #b5b5b7;
+            --dourado-brilhante: #d4af37;
+            --ouro-envelhecido: #8c7333;
+            --branco-puro: #ffffff;
+            
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Montserrat', sans-serif;
+            --transicao-seda: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--preto-luxo);
+            color: var(--prata-escovado);
+            font-family: var(--fonte-corpo);
+            font-weight: 300;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fonte-titulo);
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--branco-puro);
+        }
+
+        /* --- PORTFOLIO HEADER --- */
+        .portfolio-header {
+            padding: 180px 8% 60px 8%;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .portfolio-header .tag {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .portfolio-header p {
+            font-size: 0.95rem;
+            color: #777;
+        }
+
+        /* --- ARCHITECTURAL ASYMMETRIC GRID --- */
+        .grid-portfolio {
+            padding: 40px 8% 120px 8%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+            row-gap: 80px;
+        }
+
+        .obra-card {
+            position: relative;
+            background-color: var(--preto-suave);
+            border: 1px solid rgba(224, 224, 224, 0.02);
+            padding: 20px;
+            transition: var(--transicao-seda);
+        }
+
+        .obra-card:hover {
+            border-color: rgba(140, 115, 51, 0.2);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .obra-img-wrapper {
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+            margin-bottom: 20px;
+        }
+
+        .obra-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.8;
+            filter: grayscale(30%);
+            transition: var(--transicao-seda);
+        }
+
+        .obra-card:hover .obra-img-wrapper img {
+            transform: scale(1.03);
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .obra-info h3 {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .obra-info span {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .obra-info p {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: justify;
+        }
+
+        /* Posicionamento Assímétrico do Grid Premium */
+        .card-1 { grid-column: span 7; }
+        .card-2 { grid-column: span 5; margin-top: 100px; }
+        .card-3 { grid-column: span 5; }
+        .card-4 { grid-column: span 7; margin-top: -60px; }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 992px) {
+            .grid-portfolio { display: flex; flex-direction: column; gap: 60px; padding: 40px 5% 80px 5%; }
+            .obra-card { margin-top: 0 !important; }
+            .portfolio-header { padding: 140px 5% 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <header class="portfolio-header">
+            <span class="tag">Masterworks Catalog</span>
+            <h1>Selected Sculptures</h1>
+            <p>A rigorous curation of signature works that explore volumetric scale, mathematical curves, and permanent interaction with open air and luxury spaces.</p>
+        </header>
+
+        <section class="grid-portfolio">
+            
+            <article class="obra-card card-1">
+                <div class="obra-img-wrapper">
+                    <img src="../assets/images/og-image-preview.jpg" alt="Monumental abstract metal sculpture by Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h3>The Fluidity of Form</h3>
+                    <span>Stainless Steel & Polished Nickel</span>
+                    <p>Large-scale architectural installation designed to contrast geometric structure with organic movement, creating mirror dynamics under natural lighting.</p>
+                </div>
+            </article>
+
+            <article class="obra-card card-2">
+                <div class="obra-img-wrapper">
+                    <img src="../assets/images/og-image-preview.jpg" alt="High-end corporate bronze installation by Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h3>Spatial Tension</h3>
+                    <span>Cast Bronze & Dark Acid Patina</span>
+                    <p>A study on gravity and density, developed exclusively for executive building lobbies and high-end private corporate collections.</p>
+                </div>
+            </article>
+
+            <article class="obra-card card-3">
+                <div class="obra-img-wrapper">
+                    <img src="../assets/images/og-image-preview.jpg" alt="Mirrored steel fine art by Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h3>Reflected Horizon</h3>
+                    <span>Surgical Stainless Steel</span>
+                    <p>Designed for open environments, this piece absorbs urban colors, textures, and landscapes through an absolute mirror polish finish.</p>
+                </div>
+            </article>
+
+            <article class="obra-card card-4">
+                <div class="obra-img-wrapper">
+                    <img src="../assets/images/og-image-preview.jpg" alt="Figurative metal work by Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h3>Anatomy of Motion</h3>
+                    <span>Textured Metal & High Mirror Accents</span>
+                    <p>An elegant exploration of figurative expressions blended with fine industrial metalwork, creating shadows and deep luxury contrasts.</p>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
