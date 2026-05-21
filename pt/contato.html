@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Encomendas & Consultoria Exclusiva | Emanuel Nunes</title>
+    <meta name="description" content="Entre em contato com o ateliê de Emanuel Nunes. Agende uma consultoria privada para projetos de esculturas monumentais corporativas e peças sob medida.">
+    <meta name="keywords" content="Contato Emanuel Nunes, encomendar escultura, assessoria artistica, projetos corporativos de luxo, atelie de arte Itajai">
+    <link rel="canonical" href="https://emanuelnunes.pt/pt/contato.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS BASE DE ALTO PADRÃO --- */
+        :root {
+            --preto-luxo: #050505;
+            --preto-suave: #0f0f0f;
+            --prata-escovado: #b5b5b7;
+            --dourado-brilhante: #d4af37;
+            --ouro-envelhecido: #8c7333;
+            --branco-puro: #ffffff;
+            
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Montserrat', sans-serif;
+            --transicao-seda: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--preto-luxo);
+            color: var(--prata-escovado);
+            font-family: var(--fonte-corpo);
+            font-weight: 300;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fonte-titulo);
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--branco-puro);
+        }
+
+        /* --- LAYOUT DA PÁGINA DE CONTATO --- */
+        .contato-wrapper {
+            padding: 180px 8% 120px 8%;
+            display: flex;
+            gap: 100px;
+            align-items: flex-start;
+        }
+
+        .contato-info {
+            flex: 1;
+        }
+
+        .contato-info .tag {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .contato-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .contato-info p {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 40px;
+        }
+
+        /* Blocos de informação direta */
+        .info-direta-bloco {
+            margin-bottom: 30px;
+        }
+
+        .info-direta-bloco h3 {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--branco-puro);
+            margin-bottom: 8px;
+        }
+
+        .info-direta-bloco p, .info-direta-bloco a {
+            font-size: 0.9rem;
+            color: var(--prata-escovado);
+            text-decoration: none;
+            transition: var(--transicao-seda);
+        }
+
+        .info-direta-bloco a:hover {
+            color: var(--dourado-brilhante);
+        }
+
+        /* Formulário de Atendimento */
+        .contato-form-container {
+            flex: 1.2;
+            background: var(--preto-suave);
+            border: 1px solid rgba(140, 115, 51, 0.15);
+            padding: 50px 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .lux-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--ouro-envelhecido);
+        }
+
+        .lux-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #222;
+            padding: 12px 5px;
+            color: var(--branco-puro);
+            font-family: var(--fonte-corpo);
+            font-size: 0.9rem;
+            transition: var(--transicao-seda);
+        }
+
+        .lux-input:focus {
+            outline: none;
+            border-bottom: 1px solid var(--dourado-brilhante);
+        }
+
+        textarea.lux-input {
+            min-height: 100px;
+            resize: none;
+        }
+
+        .btn-premium {
+            display: inline-block;
+            padding: 16px 40px;
+            border: 1px solid var(--ouro-envelhecido);
+            color: var(--ouro-envelhecido);
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: var(--transicao-seda);
+            background: transparent;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .btn-premium:hover {
+            background-color: var(--ouro-envelhecido);
+            color: var(--preto-luxo);
+            box-shadow: 0 0 25px rgba(140, 115, 51, 0.25);
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            .contato-wrapper { flex-direction: column; padding: 120px 5% 60px 5%; gap: 60px; }
+            .contato-info { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="contato-wrapper">
+        
+        <section class="contato-info">
+            <span class="tag">Atendimento Altamente Restrito</span>
+            <h1>Desenvolvimento de Projetos</h1>
+            <p>Seja para monumentos públicos de grande escala, parcerias corporativas com incorporadoras de vanguarda ou aquisições para acervos particulares, nossa equipe está pronta para dar o suporte necessário.</p>
+            
+            <div class="info-direta-bloco">
+                <h3>Canais Diretos</h3>
+                <p><a href="mailto:atelie.emanuelnunes@gmail.com">atelie.emanuelnunes@gmail.com</a></p>
+                <p><a href="https://wa.me/5547988522380" target="_blank" rel="noopener">+55 (47) 98852-2380</a></p>
+            </div>
+
+            <div class="info-direta-bloco">
+                <h3>Ateliê Principal</h3>
+                <p>Itajaí / Balneário Camboriú — SC, Brasil</p>
+            </div>
+        </section>
+
+        <section class="contato-form-container">
+            <form class="lux-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome do Investidor / Arquiteto</label>
+                    <input type="text" id="nome" name="nome" class="lux-input" required autocomplete="off">
+                </div>
+                
+                <div class="form-group">
+                    <label for="empresa">Empresa / Incorporadora (Opcional)</label>
+                    <input type="text" id="empresa" name="empresa" class="lux-input" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail Corporativo</label>
+                    <input type="email" id="email" name="email" class="lux-input" required autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <label for="proposta">Breve Descrição do Escopo ou Projeto</label>
+                    <textarea id="proposta" name="proposta" class="lux-input" placeholder="Ex: Integração de escultura monumental em hall de entrada..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-premium">Solicitar Agendamento de Reunião</button>
+            </form>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
