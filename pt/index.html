@@ -199,6 +199,80 @@
 </head>
 <body>
 
+    <header class="header-premium">
+    <div class="header-container">
+        <a href="/index.html" class="logo-assinatura">Emanuel Nunes</a>
+
+        <nav class="nav-principal">
+            <ul class="nav-links">
+                <li><a href="/index.html">Início</a></li>
+                <li><a href="/obras.html">Acervo</a></li>
+                <li><a href="/biografia.html">Biografia</a></li>
+                <li><a href="/mapa.html">Mapa</a></li>
+                <li><a href="/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="seletor-idioma">
+            <a href="/index.html" class="lang-link">PT</a>
+            <span class="divisor-lang">/</span>
+            <a href="/en/index.html" class="lang-link">EN</a>
+            <span class="divisor-lang">/</span>
+            <a href="/es/index.html" class="lang-link">ES</a>
+        </div>
+    </div>
+</header>
+
+<style>
+    .header-premium {
+        position: fixed;
+        top: 0; left: 0; width: 100%;
+        z-index: 9999;
+        background: linear-gradient(to bottom, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0) 100%);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .header-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 25px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-assinatura {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+
+    .nav-links a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #b5b5b7;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+
+    .nav-links a:hover { color: #d4af37; }
+
+    .seletor-idioma { display: flex; gap: 8px; font-size: 0.65rem; color: #555; }
+    .lang-link { color: #555; text-decoration: none; }
+    .lang-link:hover { color: #d4af37; }
+    .divisor-lang { color: #222; }
+
+    @media (max-width: 768px) { .nav-principal { display: none; } }
+</style>
+
     <div id="header-placeholder"></div>
 
     <main>
@@ -258,5 +332,115 @@
                 }).catch(err => console.error("Erro no footer:", err));
         });
     </script>
+
+    <footer class="footer-premium">
+    <div class="footer-container">
+        <div class="footer-bloco-marca">
+            <h3>Emanuel Nunes</h3>
+            <p>Ateliê de Escultura Monumental & Design Contemporâneo</p>
+        </div>
+        
+        <div class="footer-links-uteis">
+            <a href="/mapa.html">Mapa</a>
+            <a href="/contato.html">Contato</a>
+        </div>
+
+        <div class="footer-bloco-copyright">
+            <p>&copy; 2026 Emanuel Nunes. Todos os direitos reservados.</p>
+            <p class="desenvolvido-por">
+                Crafted by <a href="https://julioanizio.github.io/meu-site/" target="_blank" rel="noopener">Julio Anizio</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Estilos do Componente Footer */
+    .footer-premium {
+        background-color: #050505;
+        border-top: 1px solid rgba(224, 224, 224, 0.02);
+        padding: 60px 8%;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .footer-container {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-bloco-marca h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-bottom: 5px;
+    }
+
+    .footer-bloco-marca p {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        color: #555;
+        text-transform: uppercase;
+    }
+
+    .footer-links-uteis {
+        display: flex;
+        gap: 20px;
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .footer-links-uteis a {
+        color: #555;
+        text-decoration: none;
+        transition: color 0.4s ease;
+    }
+
+    .footer-links-uteis a:hover {
+        color: #d4af37;
+    }
+
+    .footer-bloco-copyright {
+        text-align: right;
+        font-size: 0.7rem;
+        color: #444;
+        letter-spacing: 1px;
+    }
+
+    .desenvolvido-por {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        color: #333;
+        margin-top: 6px;
+        letter-spacing: 2px;
+    }
+
+    .desenvolvido-por a {
+        color: #555;
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.4s ease;
+    }
+
+    .desenvolvido-por a:hover {
+        color: #d4af37;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+        .footer-bloco-copyright { text-align: center; }
+        .footer-links-uteis { justify-content: center; }
+    }
+</style>
 </body>
 </html>
