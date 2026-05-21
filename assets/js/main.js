@@ -1,32 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Identifica o idioma e onde estamos
+    // 1. Identifica o idioma
     const pathName = window.location.pathname;
-    const isRoot = pathName === '/' || pathName.endsWith('index.html') || pathName === '/emanuel-escultor/' || pathName === '/emanuel-escultor/index.html';
-    
     const lang = pathName.includes('/en/') ? 'en' : pathName.includes('/es/') ? 'es' : 'pt';
 
-    // 2. Define o prefixo dinamicamente: se for raiz, usa 'components/', se for pasta, usa '../components/'
-    const prefixoComponente = isRoot ? 'components/' : '../components/';
+    // 2. Caminho fixo e seguro: 
+    // Como o main.js está em /assets/js/, precisamos subir 2 níveis para a raiz
+    const caminhoComponents = '../../components/';
 
     // 3. Injeção Dinâmica
-    fetch(`${prefixoComponente}header.html`)
-        .then(response => response.text())
+    fetch(`${caminhoComponents}header.html`)
+        .then(response => {
+            if (!response.ok) throw new Error("Erro ao carregar header");
+            return response.text();
+        })
         .then(html => {
             document.getElementById('header-placeholder').innerHTML = html;
             marcarLinkAtivo(lang);
-        });
+        })
+        .catch(err => console.error(err));
 
-    fetch(`${prefixoComponente}footer.html`)
-        .then(response => response.text())
+    fetch(`${caminhoComponents}footer.html`)
+        .then(response => {
+            if (!response.ok) throw new Error("Erro ao carregar footer");
+            return response.text();
+        })
         .then(html => {
             document.getElementById('footer-placeholder').innerHTML = html;
-        });
+        })
+        .catch(err => console.error(err));
 });
 
 function marcarLinkAtivo(idiomaAtual) {
     const paginaAtual = window.location.pathname.split("/").pop() || 'index.html';
     const linksMenu = document.querySelectorAll('.nav-links a');
+    
     linksMenu.forEach(link => {
+        // Remove a lógica de path se necessário, comparando apenas o nome do arquivo
         if (link.getAttribute('href') === paginaAtual) {
             link.classList.add('active');
         }
