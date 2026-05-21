@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. Caminho fixo e seguro: 
     // Como o main.js está em /assets/js/, precisamos subir 2 níveis para a raiz
-    const caminhoComponents = '../../components/';
+    const caminhoComponents = '/emanuel-escultor/components/';
 
     // 3. Injeção Dinâmica
     fetch(`${caminhoComponents}header.html`)
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => console.error(err));
 });
 
-function marcarLinkAtivo(idiomaAtual) {
+function marcarLinkAtivo(idiomaAtual) {const caminhoComponents = '/emanuel-escultor/components/';
     const paginaAtual = window.location.pathname.split("/").pop() || 'index.html';
     const linksMenu = document.querySelectorAll('.nav-links a');
     
