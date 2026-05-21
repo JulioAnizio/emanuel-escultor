@@ -1,28 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Script carregado. Iniciando busca de componentes...");
+    console.log("Iniciando carregamento...");
 
-    // Caminho absoluto usando o nome do seu repositório
-    const baseUrl = '/emanuel-escultor/'; 
+    // Esta é a forma mais simples: caminho relativo direto a partir da raiz
+    // Como o main.js está em assets/js/, voltamos duas pastas para a raiz
+    const prefixo = "../../"; 
 
-    function carregarComponente(url, elementoId) {
-        fetch(url)
-            .then(response => {
-                if (!response.ok) throw new Error(`Erro ${response.status} ao carregar ${url}`);
-                return response.text();
-            })
-            .then(html => {
-                const el = document.getElementById(elementoId);
-                if (el) {
-                    el.innerHTML = html;
-                    console.log(`Sucesso: ${elementoId} carregado.`);
-                } else {
-                    console.error(`Erro: Elemento '${elementoId}' não encontrado no HTML.`);
-                }
-            })
-            .catch(err => console.error("Falha no fetch:", err));
-    }
+    fetch(prefixo + 'components/header.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('header-placeholder').innerHTML = html)
+        .catch(err => console.error("Erro no header:", err));
 
-    // Carrega os arquivos
-    carregarComponente(baseUrl + 'components/header.html', 'header-placeholder');
-    carregarComponente(baseUrl + 'components/footer.html', 'footer-placeholder');
+    fetch(prefixo + 'components/footer.html')
+        .then(res => res.text())
+        .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+        .catch(err => console.error("Erro no footer:", err));
 });
