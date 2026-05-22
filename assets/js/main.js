@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const prefixo = "../../";
+    const prefixo = "/emanuel-escultor/";
     const baseUrl = "https://julioanizio.github.io/emanuel-escultor/";
 
     fetch(prefixo + 'components/header.html')
