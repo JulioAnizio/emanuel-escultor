@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             document.querySelectorAll('.lang-link').forEach(link => {
                 const lang = link.textContent.trim().toLowerCase();
+                console.log("lang:", lang, "href será:", baseUrl + lang + "/" + pagina);
                 link.href = baseUrl + lang + "/" + pagina;
             });
         })
