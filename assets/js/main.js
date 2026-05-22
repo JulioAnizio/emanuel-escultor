@@ -14,15 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 link.href = baseUrl + lang + "/" + pagina;
             });
 
-            // Menu hamburguer
-            const btn = document.getElementById("menu-hamburguer");
-            const menu = document.getElementById("menu-mobile");
-            if (btn && menu) {
-                btn.addEventListener("click", () => {
-                    btn.classList.toggle("ativo");
-                    menu.classList.toggle("ativo");
-                });
-            }
+            
         })
         .catch(err => console.error("Erro no header:", err));
 
