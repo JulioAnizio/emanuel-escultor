@@ -1,13 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Iniciando carregamento...");
+    const prefixo = "../../";
 
-    // Esta é a forma mais simples: caminho relativo direto a partir da raiz
-    // Como o main.js está em assets/js/, voltamos duas pastas para a raiz
-    const prefixo = "../../"; 
+    // Detecta o idioma atual pela URL
+    const path = window.location.pathname;
+    let idiomaAtual = "pt";
+    if (path.includes("/en/")) idiomaAtual = "en";
+    if (path.includes("/es/")) idiomaAtual = "es";
 
     fetch(prefixo + 'components/header.html')
         .then(res => res.text())
-        .then(html => document.getElementById('header-placeholder').innerHTML = html)
+        .then(html => {
+            document.getElementById('header-placeholder').innerHTML = html;
+
+            // Corrige links do seletor de idioma
+            const base = "/emanuel-escultor/";
+            const pagina = path.split("/").pop() || "index.html";
+
+            document.querySelector(`a[href="index.html"].lang-link`)?.setAttribute("href", `${base}pt/${pagina}`);
+            document.querySelector(`a[href="../en/index.html"].lang-link`)?.setAttribute("href", `${base}en/${pagina}`);
+            document.querySelector(`a[href="../es/index.html"].lang-link`)?.setAttribute("href", `${base}es/${pagina}`);
+        })
         .catch(err => console.error("Erro no header:", err));
 
     fetch(prefixo + 'components/footer.html')
