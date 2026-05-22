@@ -10,10 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const path = window.location.pathname;
             const pagina = path.split("/").pop() || "index.html";
 
-            const langLinks = document.querySelectorAll('.lang-link');
-            langLinks.forEach(link => {
+            document.querySelectorAll('.lang-link').forEach(link => {
                 const lang = link.textContent.trim().toLowerCase();
-                link.setAttribute("href", `${baseUrl}${lang}/${pagina}`);
+                link.href = baseUrl + lang + "/" + pagina;
             });
         })
         .catch(err => console.error("Erro no header:", err));
