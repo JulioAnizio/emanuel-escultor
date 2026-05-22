@@ -1,7 +1,6 @@
 <header class="header-premium">
     <div class="header-container">
         <a href="index.html" class="logo-assinatura">Emanuel Nunes</a>
-
         <nav class="nav-principal">
             <ul class="nav-links">
                 <li><a href="index.html">Início</a></li>
@@ -11,14 +10,34 @@
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
-
-       <div class="seletor-idioma" id="seletor-idioma">
-    <a href="https://julioanizio.github.io/emanuel-escultor/pt/index.html" class="lang-link">PT</a>
-    <span class="divisor-lang">/</span>
-    <a href="https://julioanizio.github.io/emanuel-escultor/en/index.html" class="lang-link">EN</a>
-    <span class="divisor-lang">/</span>
-    <a href="https://julioanizio.github.io/emanuel-escultor/es/index.html" class="lang-link">ES</a>
-</div>
+        <div class="seletor-idioma" id="seletor-idioma">
+            <a href="https://julioanizio.github.io/emanuel-escultor/pt/index.html" class="lang-link">PT</a>
+            <span class="divisor-lang">/</span>
+            <a href="https://julioanizio.github.io/emanuel-escultor/en/index.html" class="lang-link">EN</a>
+            <span class="divisor-lang">/</span>
+            <a href="https://julioanizio.github.io/emanuel-escultor/es/index.html" class="lang-link">ES</a>
+        </div>
+        <button class="menu-hamburguer" id="menu-hamburguer" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="menu-mobile" id="menu-mobile">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="obras.html">Acervo</a></li>
+            <li><a href="biografia.html">Biografia</a></li>
+            <li><a href="mapa.html">Mapa</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <div class="seletor-idioma-mobile">
+            <a href="https://julioanizio.github.io/emanuel-escultor/pt/index.html">PT</a>
+            <span>/</span>
+            <a href="https://julioanizio.github.io/emanuel-escultor/en/index.html">EN</a>
+            <span>/</span>
+            <a href="https://julioanizio.github.io/emanuel-escultor/es/index.html">ES</a>
+        </div>
     </div>
 </header>
 
@@ -31,7 +50,6 @@
         backdrop-filter: blur(10px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.02);
     }
-
     .header-container {
         max-width: 1600px;
         margin: 0 auto;
@@ -40,7 +58,6 @@
         justify-content: space-between;
         align-items: center;
     }
-
     .logo-assinatura {
         font-family: 'Playfair Display', serif;
         font-size: 1.3rem;
@@ -49,9 +66,7 @@
         color: #ffffff;
         text-decoration: none;
     }
-
     .nav-links { display: flex; gap: 40px; list-style: none; }
-
     .nav-links a {
         font-family: 'Montserrat', sans-serif;
         font-size: 0.7rem;
@@ -61,13 +76,85 @@
         text-decoration: none;
         transition: 0.5s;
     }
-
     .nav-links a:hover { color: #d4af37; }
-
     .seletor-idioma { display: flex; gap: 8px; font-size: 0.65rem; color: #555; }
     .lang-link { color: #555; text-decoration: none; }
     .lang-link:hover { color: #d4af37; }
     .divisor-lang { color: #222; }
 
-    @media (max-width: 768px) { .nav-principal { display: none; } }
+    /* Hamburguer */
+    .menu-hamburguer {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .menu-hamburguer span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: #ffffff;
+        transition: 0.3s;
+    }
+    .menu-hamburguer.ativo span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .menu-hamburguer.ativo span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-hamburguer.ativo span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Menu mobile */
+    .menu-mobile {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background: rgba(5, 5, 5, 0.97);
+        padding: 30px 0;
+        gap: 20px;
+    }
+    .menu-mobile.ativo { display: flex; }
+    .menu-mobile ul { list-style: none; text-align: center; padding: 0; }
+    .menu-mobile ul li { margin: 15px 0; }
+    .menu-mobile ul a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #b5b5b7;
+        text-decoration: none;
+    }
+    .menu-mobile ul a:hover { color: #d4af37; }
+    .seletor-idioma-mobile {
+        display: flex;
+        gap: 8px;
+        font-size: 0.75rem;
+        color: #555;
+    }
+    .seletor-idioma-mobile a { color: #555; text-decoration: none; }
+    .seletor-idioma-mobile a:hover { color: #d4af37; }
+
+    @media (max-width: 768px) {
+        .nav-principal { display: none; }
+        .seletor-idioma { display: none; }
+        .menu-hamburguer { display: flex; }
+    }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("menu-hamburguer");
+        const menu = document.getElementById("menu-mobile");
+        if (btn && menu) {
+            btn.addEventListener("click", () => {
+                btn.classList.toggle("ativo");
+                menu.classList.toggle("ativo");
+            });
+        }
+    });
+</script>
