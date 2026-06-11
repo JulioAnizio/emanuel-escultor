@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const baseUrl = "https://julioanizio.github.io/emanuel-escultor/";
+    const baseUrl = "https://emanuelnunes.com/";
 
     fetch(baseUrl + 'components/header.html')
         .then(res => res.text())
