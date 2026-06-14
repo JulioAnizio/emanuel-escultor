@@ -2,18 +2,22 @@
 <html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-      
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Acervo de Obras | Emanuel Nunes — Esculturas Contemporâneas</title>
     <meta name="description" content="Conheça o catálogo de esculturas monumentais e obras públicas de Emanuel Nunes. Criações exclusivas em metal polido, inox e acabamentos espelhados de alto padrão.">
-    <meta name="keywords" content="Portfolio Emanuel Nunes, galeria de arte, esculturas em inox, monumentos publicos, arte contemporanea metal, Itajai arte">
-    <link rel="canonical" href="https://emanuelnunes.pt/pt/obras.html">
+    <meta name="keywords" content="Portfolio Emanuel Nunes, galeria de arte, esculturas em inox, monumentos publicos, arte contemporanea metal">
+    <link rel="canonical" href="https://emanuelnunes.com/pt/obras.html">
+    <link rel="icon" href="../assets/images/favicon.jpg" type="image/jpeg">
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="Acervo | Emanuel Nunes — Escultor">
+    <meta property="og:description" content="Esculturas monumentais em aço inox, corten e metal polido por Emanuel Nunes.">
+    <meta property="og:image" content="https://emanuelnunes.com/assets/images/og-image.png">
+    <meta property="og:url" content="https://emanuelnunes.com/pt/obras.html">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* --- CSS BASE & ACABAMENTO DE GALERIA --- */
         :root {
             --preto-luxo: #050505;
             --preto-suave: #0f0f0f;
@@ -21,7 +25,6 @@
             --dourado-brilhante: #d4af37;
             --ouro-envelhecido: #8c7333;
             --branco-puro: #ffffff;
-            
             --fonte-titulo: 'Playfair Display', serif;
             --fonte-corpo: 'Montserrat', sans-serif;
             --transicao-seda: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -46,7 +49,6 @@
             color: var(--branco-puro);
         }
 
-        /* --- CONTAINER PRINCIPAL --- */
         .portfolio-header {
             padding: 160px 8% 40px 8%;
             text-align: center;
@@ -66,12 +68,12 @@
             margin: 0 auto 40px auto;
         }
 
-        /* --- FILTROS DE CATEGORIA --- */
         .filtro-container {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin-bottom: 60px;
+            flex-wrap: wrap;
         }
 
         .filtro-btn {
@@ -93,7 +95,6 @@
             border-bottom: 1px solid var(--ouro-envelhecido);
         }
 
-        /* --- GRID ASSEMITRICO (ESTILO MUSEU) --- */
         .galeria-grid {
             padding: 0 8% 120px 8%;
             display: grid;
@@ -102,7 +103,7 @@
         }
 
         .obra-item {
-            grid-column: span 4; /* Padrão ocupa 4 de 12 colunas */
+            grid-column: span 4;
             background-color: var(--preto-suave);
             border: 1px solid rgba(224, 224, 224, 0.02);
             overflow: hidden;
@@ -111,16 +112,8 @@
             flex-direction: column;
         }
 
-        /* Variações de tamanho para quebrar a simetria de forma elegante */
-        .obra-item.monumental { grid-column: span 8; } /* Obras maiores ocupam 8 colunas */
+        .obra-item.monumental { grid-column: span 8; }
         .obra-item.vertical { grid-row: span 2; }
-
-        .obra-link {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            height: 100%;
-        }
 
         .obra-wrapper-img {
             position: relative;
@@ -129,7 +122,6 @@
             background-color: #000;
         }
 
-        /* Ajustes de proporção baseados na classe */
         .obra-item.vertical .obra-wrapper-img { height: 600px; }
         .obra-item.monumental .obra-wrapper-img { height: 450px; }
         .obra-item .obra-wrapper-img { height: 350px; }
@@ -165,49 +157,34 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--ouro-envelhecido);
+            display: block;
+            margin-bottom: 10px;
         }
 
-        /* Ocultar elementos filtrados */
-        .obra-item.oculto {
-            display: none;
+        .obra-descricao {
+            font-size: 0.78rem;
+            color: var(--prata-escovado);
+            line-height: 1.6;
+            letter-spacing: 0.5px;
         }
 
-        /* --- RESPONSIVIDADE --- */
+        .obra-item.oculto { display: none; }
+
         @media (max-width: 1024px) {
             .obra-item, .obra-item.monumental { grid-column: span 6; }
         }
 
         @media (max-width: 768px) {
-            .filtro-container { flex-wrap: wrap; gap: 15px; }
+            .filtro-container { gap: 15px; }
             .galeria-grid { grid-template-columns: 1fr; padding: 0 5% 80px 5%; gap: 30px; }
             .obra-item, .obra-item.monumental { grid-column: span 12; }
-            .obra-wrapper-img, .obra-item.vertical .obra-wrapper-img, .obra-item.monumental .obra-wrapper-img { height: 350px; }
+            .obra-wrapper-img,
+            .obra-item.vertical .obra-wrapper-img,
+            .obra-item.monumental .obra-wrapper-img { height: 300px; }
         }
     </style>
 </head>
 <body>
-
-    <header class="header-premium">
-    <div class="header-container">
-        <a href="index.html" class="logo-assinatura">Emanuel Nunes</a>
-
- <nav class="nav-principal">
-    <ul class="nav-links">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="obras.html">Acervo</a></li>
-        <li><a href="biografia.html">Biografia</a></li>
-        <li><a href="mapa.html">Mapa</a></li>
-        <li><a href="contato.html">Contato</a></li>
-    </ul>
-</nav>
-
-          <div class="seletor-idioma">
-    <a href="../pt/index.html" class="lang-link">PT</a>
-    <a href="../en/index.html" class="lang-link">EN</a>
-    <a href="../es/index.html" class="lang-link">ES</a>
-</div>
-    </div>
-</header>
 
     <div id="header-placeholder"></div>
 
@@ -215,54 +192,159 @@
         <section class="portfolio-header">
             <h1>Acervo & Obras</h1>
             <p>A manifestação tridimensional da forma através dos tempos e dos elementos nobres</p>
-            
+
             <div class="filtro-container" role="tablist">
-                <button class="filtro-btn ativo" onclick="filtrarObras('todas')">Todas as Peças</button>
-                <button class="filtro-btn" onclick="filtrarObras('inox')">Aço Inox</button>
-                <button class="filtro-btn" onclick="filtrarObras('niquel')">Banho de Níquel</button>
-                <button class="filtro-btn" onclick="filtrarObras('monumental')">Escala Monumental</button>
+                <button class="filtro-btn ativo" onclick="filtrarObras(this, 'todas')">Todas as Peças</button>
+                <button class="filtro-btn" onclick="filtrarObras(this, 'inox')">Aço Inox</button>
+                <button class="filtro-btn" onclick="filtrarObras(this, 'corten')">Aço Corten</button>
+                <button class="filtro-btn" onclick="filtrarObras(this, 'monumental')">Escala Monumental</button>
+                <button class="filtro-btn" onclick="filtrarObras(this, 'painel')">Painéis</button>
             </div>
         </section>
 
         <div class="galeria-grid">
-            
+
+            <!-- obra1 -->
+            <article class="obra-item" data-material="corten">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra1.jpg" alt="Guardião da Natureza — escultura em aço corten por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Guardião da Natureza</h2>
+                    <span class="obra-meta">Aço Corten — Integrada à Natureza</span>
+                    <p class="obra-descricao">A oxidação natural do corten funde a escultura à paisagem, criando uma peça viva que evolui com as estações.</p>
+                </div>
+            </article>
+
+            <!-- obra2 -->
             <article class="obra-item monumental" data-material="monumental">
                 <div class="obra-wrapper-img">
-                    <img src="../assets/images/obra-benveartt.jpg" alt="Escultura monumental instalada em fachada corporativa de alto padrão por Emanuel Nunes">
+                    <img src="../assets/images/obra2.jpg" alt="Cascata Prateada — escultura em aço inox por Emanuel Nunes">
                 </div>
                 <div class="obra-info">
-                    <h2>Evolução Urbana</h2>
-                    <span class="obra-meta">Aço Inox Polido — Escala Monumental</span>
+                    <h2>Cascata Prateada</h2>
+                    <span class="obra-meta">Aço Inox Polido — Instalação Monumental</span>
+                    <p class="obra-descricao">Peça de impacto instalada em lobby de alto padrão, onde a geometria e o metal polido dialogam com a arquitetura contemporânea.</p>
                 </div>
             </article>
 
-            <article class="obra-item vertical" data-material="inox">
+            <!-- obra3 -->
+            <article class="obra-item" data-material="painel">
                 <div class="obra-wrapper-img">
-                    <img src="../assets/images/obra-bailarina.jpg" alt="Escultura em linhas fluidas representando movimento e leveza em aço inox por Emanuel Nunes">
+                    <img src="../assets/images/obra3.jpg" alt="Painel escultórico vermelho Laços por Emanuel Nunes">
                 </div>
                 <div class="obra-info">
-                    <h2>A Bailarina</h2>
-                    <span class="obra-meta">Aço Inox Escovado — Linhas Orgânicas</span>
+                    <h2>Laços</h2>
+                    <span class="obra-meta">Aço Lacado — Painel Mural</span>
+                    <p class="obra-descricao">Composição em vermelho intenso que explora a tensão entre formas fragmentadas, evocando conexões e rupturas humanas.</p>
                 </div>
             </article>
 
-            <article class="obra-item" data-material="niquel">
-                <div class="obra-wrapper-img">
-                    <img src="../assets/images/obra-niquel.jpg" alt="Obra de arte abstrata espelhada com acabamento em banho químico de níquel por Emanuel Nunes">
-                </div>
-                <div class="obra-info">
-                    <h2>Reflexos do Eu</h2>
-                    <span class="obra-meta">Metal Maciço — Banho de Níquel</span>
-                </div>
-            </article>
-
+            <!-- obra4 -->
             <article class="obra-item" data-material="inox">
                 <div class="obra-wrapper-img">
-                    <img src="../assets/images/obra-benveartt.jpg" alt="Escultura de luxo geométrica em aço inox polido por Emanuel Nunes">
+                    <img src="../assets/images/obra4.jpg" alt="Instalação metálica suspensa no teto por Emanuel Nunes">
                 </div>
                 <div class="obra-info">
-                    <h2>Simetria Oculta</h2>
-                    <span class="obra-meta">Aço Inox Espelhado</span>
+                    <h2>Fluxo Suspenso</h2>
+                    <span class="obra-meta">Aço Inox Escovado — Instalação Aérea</span>
+                    <p class="obra-descricao">Obra instalada no plano do teto, criando uma experiência imersiva de movimento congelado em metal polido.</p>
+                </div>
+            </article>
+
+            <!-- obra5 -->
+            <article class="obra-item" data-material="monumental">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra5.jpg" alt="Escultura para construtora FG por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Estrutura Viva</h2>
+                    <span class="obra-meta">Aço Inox — Construtora FG</span>
+                    <p class="obra-descricao">Encomenda exclusiva para o acervo da Construtora FG, integrando arte e identidade corporativa em escala monumental.</p>
+                </div>
+            </article>
+
+            <!-- obra6 -->
+            <article class="obra-item" data-material="painel">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra6.jpg" alt="Painel em ouro envelhecido por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Ouro do Tempo</h2>
+                    <span class="obra-meta">Metal — Banho em Ouro Envelhecido</span>
+                    <p class="obra-descricao">Painel com acabamento em ouro envelhecido que traz a patina do tempo como elemento estético central da composição.</p>
+                </div>
+            </article>
+
+            <!-- obra7 -->
+            <article class="obra-item" data-material="corten">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra7.jpg" alt="Escultura em aço corten integrada à natureza por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Raízes de Ferro</h2>
+                    <span class="obra-meta">Aço Corten — Integrada à Natureza</span>
+                    <p class="obra-descricao">A oxidação natural do corten funde a escultura à paisagem, criando uma peça viva que evolui com as estações.</p>
+                </div>
+            </article>
+
+            <!-- obra8 -->
+            <article class="obra-item monumental" data-material="painel">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra8.jpg" alt="Cosmos — painéis geométricos por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Cosmos</h2>
+                    <span class="obra-meta">Metal — Painéis Geométricos</span>
+                    <p class="obra-descricao">Conjunto de painéis que reinterpreta a estrutura do universo em facetas metálicas, criando uma constelação de volumes e reflexos.</p>
+                </div>
+            </article>
+
+            <!-- obra9 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra9.jpg" alt="Obra em metal por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Título a Definir</h2>
+                    <span class="obra-meta">Aço Inox</span>
+                    <p class="obra-descricao">Descrição em breve.</p>
+                </div>
+            </article>
+
+            <!-- obra10 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra10.jpg" alt="Namorados — escultura figurativa por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Namorados</h2>
+                    <span class="obra-meta">Aço Inox Polido — Figurativo</span>
+                    <p class="obra-descricao">Escultura figurativa que captura o instante do encontro entre dois corpos, eternizando o gesto do amor em metal espelhado.</p>
+                </div>
+            </article>
+
+            <!-- obra11 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra11.jpg" alt="Obra em metal por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Título a Definir</h2>
+                    <span class="obra-meta">Aço Inox</span>
+                    <p class="obra-descricao">Descrição em breve.</p>
+                </div>
+            </article>
+
+            <!-- obra12 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra12.jpg" alt="Obra em metal por Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Título a Definir</h2>
+                    <span class="obra-meta">Aço Inox</span>
+                    <p class="obra-descricao">Descrição em breve.</p>
                 </div>
             </article>
 
@@ -271,18 +353,12 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="../assets/js/main.js?v=2"></script>
+    <script src="../assets/js/main.js?v=3"></script>
     <script>
-        // Função de filtro ultra veloz nativa para manter performance 100% no Google
-        function filtrarObras(categoria) {
-            // Ajustar visual dos botões
-            const botoes = document.querySelectorAll('.filtro-btn');
-            botoes.forEach(btn => btn.classList.remove('ativo'));
-            event.target.classList.add('active'); // Corrige classe ativa temporária
-
-            // Filtragem dos itens no DOM
-            const itens = document.querySelectorAll('.obra-item');
-            itens.forEach(item => {
+        function filtrarObras(btn, categoria) {
+            document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
+            btn.classList.add('ativo');
+            document.querySelectorAll('.obra-item').forEach(item => {
                 const material = item.getAttribute('data-material');
                 if (categoria === 'todas' || material === categoria) {
                     item.classList.remove('oculto');
@@ -292,26 +368,6 @@
             });
         }
     </script>
-     <footer class="footer-premium">
-    <div class="footer-container">
-        <div class="footer-bloco-marca">
-            <h3>Emanuel Nunes</h3>
-            <p>Ateliê de Escultura Monumental & Design Contemporâneo</p>
-        </div>
-        
-        <div class="footer-links-uteis">
-            <a href="/mapa.html">Mapa</a>
-            <a href="/contato.html">Contato</a>
-        </div>
 
-        <div class="footer-bloco-copyright">
-            <p>&copy; 2026 Emanuel Nunes. Todos os direitos reservados.</p>
-            <p class="desenvolvido-por">
-                Crafted by <a href="https://julioanizio.github.io/meu-site/" target="_blank" rel="noopener">Julio Anizio</a>
-            </p>
-        </div>
-    </div>
-</footer>
-<script src="../assets/js/main.js?v=2"></script>
 </body>
 </html>
