@@ -2,18 +2,21 @@
 <html lang="pt-PT">
 <head>
     <meta charset="UTF-8">
-      
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Histórico & Trajetória | Emanuel Nunes — Escultor Monumental</title>
-    <meta name="description" content="Conheça a história, conceito e evolução técnica de Emanuel Nunes. A trajetória internacional de um escultor especializado em metais nobres e grandes proporções urbanas.">
-    <meta name="keywords" content="Biografia Emanuel Nunes, historico escultor, exposicoes arte contemporanea, trajetoria Emanuel Nunes, escultor portugues, arte monumental internacional">
-    <link rel="canonical" href="https://emanuelnunes.pt/pt/biografia.html">
+    <meta name="description" content="Conheça a história, conceito e evolução técnica de Emanuel Nunes. A trajetória internacional de um escultor especializado em metais nobres, fundição em cera perdida e grandes proporções urbanas.">
+    <meta name="keywords" content="Biografia Emanuel Nunes, historico escultor, exposicoes arte contemporanea, trajetoria Emanuel Nunes, escultor portugues, arte monumental internacional, Fundarte">
+    <link rel="canonical" href="https://emanuelnunes.com/pt/biografia.html">
+    <link rel="icon" href="../assets/images/favicon.jpg" type="image/jpeg">
+
+    <meta property="og:title" content="Histórico & Trajetória | Emanuel Nunes — Escultor Monumental">
+    <meta property="og:description" content="A trajetória internacional de Emanuel Nunes, escultor especializado em metais nobres e fundição em cera perdida.">
+    <meta property="og:image" content="https://emanuelnunes.com/assets/images/og-image.png">
+    <meta property="og:url" content="https://emanuelnunes.com/pt/biografia.html">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* --- CSS BASE DE ALTO PADRÃO --- */
         :root {
             --preto-luxo: #050505;
             --preto-suave: #0f0f0f;
@@ -21,7 +24,6 @@
             --dourado-brilhante: #d4af37;
             --ouro-envelhecido: #8c7333;
             --branco-puro: #ffffff;
-            
             --fonte-titulo: 'Playfair Display', serif;
             --fonte-corpo: 'Montserrat', sans-serif;
             --transicao-seda: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -46,7 +48,6 @@
             color: var(--branco-puro);
         }
 
-        /* --- INTRODUÇÃO DA TRAJETÓRIA --- */
         .bio-intro {
             padding: 180px 8% 80px 8%;
             display: flex;
@@ -54,9 +55,7 @@
             gap: 80px;
         }
 
-        .bio-texto-bloco {
-            flex: 1.2;
-        }
+        .bio-texto-bloco { flex: 1.2; }
 
         .bio-texto-bloco .tag {
             font-size: 0.65rem;
@@ -90,6 +89,9 @@
             border: 1px solid rgba(140, 115, 51, 0.2);
             padding: 15px;
             background: var(--preto-suave);
+            align-self: flex-start;
+            position: sticky;
+            top: 140px;
         }
 
         .bio-perfil-img img {
@@ -105,7 +107,7 @@
             opacity: 1;
         }
 
-        /* --- LINHA DO TEMPO MINIMALISTA --- */
+        /* TIMELINE */
         .timeline-section {
             background-color: var(--preto-suave);
             padding: 100px 8%;
@@ -124,7 +126,6 @@
             margin: 0 auto;
         }
 
-        /* A linha central vertical */
         .timeline-container::after {
             content: '';
             position: absolute;
@@ -141,11 +142,9 @@
             width: 50%;
         }
 
-        /* Ajustes posicionamento esquerda e direita */
         .timeline-item.esquerda { left: 0; text-align: right; }
         .timeline-item.direita { left: 50%; text-align: left; }
 
-        /* Os círculos marcadores da linha */
         .timeline-item::after {
             content: '';
             position: absolute;
@@ -183,11 +182,12 @@
             color: #666;
         }
 
-        /* --- RESPONSIVIDADE --- */
+        /* RESPONSIVIDADE */
         @media (max-width: 992px) {
             .bio-intro { flex-direction: column; padding: 120px 5% 60px 5%; gap: 50px; }
             .bio-texto-bloco p { text-align: center; }
             .bio-texto-bloco h1 { text-align: center; }
+            .bio-perfil-img { position: static; }
         }
 
         @media (max-width: 768px) {
@@ -200,40 +200,31 @@
 </head>
 <body>
 
-    <header class="header-premium">
-    <div class="header-container">
-        <a href="/index.html" class="logo-assinatura">Emanuel Nunes</a>
-
-   <nav class="nav-principal">
-    <ul class="nav-links">
-        <li><a href="/index.html">Início</a></li>
-        <li><a href="/obras.html">Acervo</a></li>
-        <li><a href="/biografia.html">Biografia</a></li>
-        <li><a href="/mapa.html">Mapa</a></li>
-        <li><a href="/contato.html">Contato</a></li>
-    </ul>
-</nav>
-
-         <div class="seletor-idioma">
-    <a href="../pt/index.html" class="lang-link">PT</a>
-    <a href="../en/index.html" class="lang-link">EN</a>
-    <a href="../es/index.html" class="lang-link">ES</a>
-</div>
-    </div>
-</header>
-
     <div id="header-placeholder"></div>
 
     <main>
-      <section class="bio-intro">
+        <section class="bio-intro">
             <div class="bio-texto-bloco">
                 <span class="tag">A Mente por Trás do Metal</span>
                 <h1>A Filosofia do Volume e Espaço</h1>
-                <p>Escultor e artista plástico português, nascido em Moçambique (Continente Africano) e criado em Portugal, <strong>Emanuel Nunes</strong> carrega em sua assinatura uma profunda conexão com suas origens multiculturais e vivências em diferentes continentes.</p>
-                <p>Sua trajetória de alta formação técnica começou cedo: dos 16 aos 18 anos, frequentou a <strong>Escola de Belas Artes</strong>, onde refinou sua percepção tridimensional nos ateliês de grandes mestres da escultura, como João Fragoso e Dorita Castelo Branco — mentora com quem acompanhou de perto o ofício por dez anos. Expandindo as fronteiras de seu conhecimento, Emanuel especializou-se em fundição na prestigiada <strong>Fundição K (técnica de cera perdida)</strong> na Espanha, e na renomada <strong>Fundição do Museu do Louvre</strong>, na França.</p>
-                <p>Hoje radicado em Balneário Camboriú, Brasil, e acumulando mais de três décadas de experiência, o artista é reconhecido internacionalmente. Suas esculturas monumentais em aço e mármore marcam presença em museus e espaços públicos de países como <strong>Portugal, Turquia, França e Itália</strong>. Cada obra é minuciosamente projetada para estabelecer um diálogo ativo e fluido com o espaço, o movimento e o observador, deixando um legado sólido de inspiração na alta arquitetura e nas artes plásticas.</p>
+
+                <p><strong>Emanuel Nunes</strong> nasceu em Maputo, Moçambique, em 1968, filho de pais portugueses — a mãe analista química, o pai técnico em metalurgia e artista plástico por opção. Dessa convivência veio seu interesse precoce pelas artes e pelas grandes construções. Em 1974, a família emigrou para o Malawi, onde Emanuel realizou seus estudos primários, chegando a Lisboa em 1977, aos nove anos de idade.</p>
+
+                <p>Sua formação técnica começou na <strong>Escola Industrial de Lisboa</strong>, onde se profissionalizou na técnica de fundição. Dos 16 aos 18 anos, frequentou a <strong>Escola de Belas Artes</strong> como aluno assistente, moldando-se nos ateliês de grandes mestres da escultura como João Fragoso e Dorita Castelo Branco, mentora com quem trabalhou por dez anos, até o fim de sua vida.</p>
+
+                <p>Entre os 18 e os 21 anos, especializou-se na técnica de <strong>cera perdida</strong> na Fundição K, na Espanha, e na Fundição do Museu do Louvre, na França — paralelamente, frequentou por cinco anos o Laboratório Nacional de Engenharia Civil (LNEC). Foi nesse universo que se identificou como a <strong>"terceira mão" do artista</strong>: aquela que nunca aparece, mas que transforma o barro, o gesso ou o desenho em qualquer escala e material. Em 1985 fundou a <strong>Fundarte</strong>, sua própria empresa de fundição e restauração de obras de grande porte, ativa até 2005, contando com dez colaboradores e o próprio pai entre eles.</p>
+
+                <p>Por suas mãos passaram peças como a maior escultura já exposta em Portimão — 12 metros de altura e 20 toneladas — e a reprodução da Deusa Kun Iam, com 25 metros e 50 toneladas, presente do governo português a Macau no dia em que o território passou a ser administrado pela China. Suas obras, todas certificadas com o carimbo da Fundarte, encontram-se hoje em museus e espaços públicos e privados de <strong>Portugal, Moscou, Turquia, França, Itália, Holanda, Madeira, Açores, Suíça, Espanha e Estados Unidos</strong>.</p>
+
+                <p>Em 2004, a morte de sua mãe — a pessoa que sempre o compreendeu, apoiou e acreditou em seu talento — marcou um ponto de virada. Foi esse momento que o levou a repensar sua jornada profissional e pessoal.</p>
+
+                <p>Em 2005, uma viagem ao Brasil despertou um desejo antigo: ser autor das próprias esculturas. Com apoio de amigos portugueses radicados no país, Emanuel passou a trabalhar em diversas áreas em São Paulo, Rio de Janeiro e outros estados, postergando seu retorno a Lisboa. Em 2007, uma viagem de trabalho o levou a Santa Catarina — identificou-se de imediato com o povo e a cultura e decidiu não voltar a Portugal. Por três anos viveu em Rio do Sul, desenvolvendo sua nova carreira como escultor independente.</p>
+
+                <p>Em 2010, mudou-se para <strong>Balneário Camboriú</strong> e abriu seu próprio ateliê, passando a executar obras para edifícios, residências, praças, parques e jardins, além de participar de exposições pelo Brasil. Em 2011, obteve a cidadania brasileira e assumiu a vice-presidência da Associação de Artistas Plásticos e Preservação da Natureza e do Meio Ambiente (ACAPPMA).</p>
+
+                <p>Em 2017, perdeu seu pai, Eduardo Rafael — o grande influenciador e motivador de sua carreira como artista, seu mentor e ídolo desde a infância, quando passava horas admirando-o pintar as paisagens da selva africana. Hoje, com mais de três décadas de experiência, Emanuel mantém viva essa herança técnica e afetiva, aplicada às suas próprias criações monumentais em aço e metal.</p>
             </div>
-            
+
             <div class="bio-perfil-img">
                 <img src="../assets/images/emanuel-perfil.jpg" alt="Retrato em preto e branco do escultor Emanuel Nunes">
             </div>
@@ -241,41 +232,82 @@
 
         <section class="timeline-section">
             <h2>Marcos Históricos</h2>
-            
+
             <div class="timeline-container">
-                
+
                 <div class="timeline-item esquerda">
-                    <span class="date-badge">Origens</span>
-                    <h3>Primeiros Contatos com a Forma</h3>
-                    <p>Início dos estudos técnicos em metalurgia, desenho industrial e modelagem clássica em solo europeu, assentando as bases para grandes manipulações estruturais.</p>
+                    <span class="date-badge">1968</span>
+                    <h3>Origens em Maputo</h3>
+                    <p>Nascimento em Moçambique, filho de pai metalúrgico e artista plástico — primeiro contato com a arte e a matéria.</p>
                 </div>
 
                 <div class="timeline-item direita">
-                    <span class="date-badge">Expansão</span>
-                    <h3>A Conquista do Espaço Público</h3>
-                    <p>Desenvolvimento e entrega de obras monumentais para praças e instituições europeias, testando pela primeira vez os limites de escala das peças.</p>
+                    <span class="date-badge">1977</span>
+                    <h3>Chegada a Lisboa</h3>
+                    <p>Após anos no Malawi, a família se instala em Lisboa. Início da formação na Escola Industrial e na técnica de fundição.</p>
                 </div>
 
                 <div class="timeline-item esquerda">
-                    <span class="date-badge">Aprimoramento</span>
-                    <h3>Domínio do Inox e Banhos de Níquel</h3>
-                    <p>Consolidação da técnica de espelhamento absoluto. A luz passa a ser elemento central das esculturas de luxo, atraindo colecionadores privados de prestígio.</p>
+                    <span class="date-badge">1984–1986</span>
+                    <h3>Escola de Belas Artes</h3>
+                    <p>Aluno assistente nos ateliês de João Fragoso e Dorita Castelo Branco, mentora que acompanhou por dez anos.</p>
                 </div>
 
                 <div class="timeline-item direita">
-                    <span class="date-badge">Conexão Global</span>
-                    <h3>Integração com a Arquitetura Premium</h3>
-                    <p>Inserção definitiva de grandes esculturas autorais em fachadas e halls de empreendimentos corporativos de ponta e construtoras de vanguarda no Brasil.</p>
+                    <span class="date-badge">1985</span>
+                    <h3>Cera Perdida & Fundarte</h3>
+                    <p>Especialização na Fundição K (Espanha) e Fundição do Louvre (França). Fundação da Fundarte, ativa até 2005.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">Fundarte</span>
+                    <h3>Obras de Grande Escala</h3>
+                    <p>Maior escultura exposta em Portimão (12m, 20 toneladas) e reprodução da Deusa Kun Iam (25m, 50 toneladas) para Macau.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">2004</span>
+                    <h3>Um Ponto de Virada</h3>
+                    <p>A perda da mãe leva Emanuel a repensar sua trajetória profissional e pessoal.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">2005</span>
+                    <h3>Nova Jornada no Brasil</h3>
+                    <p>Uma viagem revela o desejo de ser autor das próprias obras. Início de uma nova trajetória como escultor independente.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">2007</span>
+                    <h3>Santa Catarina</h3>
+                    <p>Identifica-se com o povo e a cultura catarinense e decide não retornar a Portugal. Três anos em Rio do Sul.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">2010</span>
+                    <h3>Ateliê em Balneário Camboriú</h3>
+                    <p>Estabelece residência e ateliê próprio, dedicando-se a obras para edifícios, residências, praças e jardins.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">2011</span>
+                    <h3>Cidadania Brasileira</h3>
+                    <p>Naturaliza-se brasileiro e assume a vice-presidência da Associação de Artistas Plásticos e Preservação da Natureza (ACAPPMA).</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">2017</span>
+                    <h3>Legado de Eduardo Rafael</h3>
+                    <p>Perda do pai — mentor, ídolo de infância e grande influenciador de sua carreira como artista.</p>
                 </div>
 
             </div>
         </section>
     </main>
 
-  
-<div id="footer-placeholder"></div>
-   
-<script src="../assets/js/main.js?v=2"></script>
+    <div id="footer-placeholder"></div>
+
+    <script src="../assets/js/main.js?v=3"></script>
 
 </body>
 </html>
