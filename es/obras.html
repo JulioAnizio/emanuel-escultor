@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>La Colección | Esculturas Monumentales — Emanuel Nunes</title>
-    <meta name="description" content="Descubra la colección internacional de esculturas de bellas artes de Emanuel Nunes. Obras contemporáneas a gran escala creadas en acero inoxidable y níquel premium.">
-    <meta name="keywords" content="colección Emanuel Nunes, portafolio esculturas de metal, arte público monumental, curadores contemporáneos, esculturas de lujo interiores">
-    <link rel="canonical" href="https://emanuelnunes.pt/es/obras.html">
+    <title>Colección | Emanuel Nunes — Esculturas Contemporáneas</title>
+    <meta name="description" content="Descubra el catálogo de esculturas monumentales y obras públicas de Emanuel Nunes. Creaciones exclusivas en metal pulido, acero inoxidable y acabados espejados.">
+    <meta name="keywords" content="Portfolio Emanuel Nunes, galeria de arte, esculturas en acero inoxidable, monumentos publicos, arte contemporaneo metal">
+    <link rel="canonical" href="https://emanuelnunes.com/es/obras.html">
+    <link rel="icon" href="../assets/images/favicon.jpg" type="image/jpeg">
+
+    <meta property="og:title" content="Colección | Emanuel Nunes — Escultor">
+    <meta property="og:description" content="Esculturas monumentales en acero inoxidable, acero corten y metal pulido de Emanuel Nunes.">
+    <meta property="og:image" content="https://emanuelnunes.com/assets/images/og-image.png">
+    <meta property="og:url" content="https://emanuelnunes.com/es/obras.html">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* --- CORE CSS (MATCHING THE LUXURY SPECIFICATIONS) --- */
         :root {
             --preto-luxo: #050505;
             --preto-suave: #0f0f0f;
@@ -20,7 +24,6 @@
             --dourado-brilhante: #d4af37;
             --ouro-envelhecido: #8c7333;
             --branco-puro: #ffffff;
-            
             --fonte-titulo: 'Playfair Display', serif;
             --fonte-corpo: 'Montserrat', sans-serif;
             --transicao-seda: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -37,7 +40,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3 {
+        h1, h2 {
             font-family: var(--fonte-titulo);
             font-weight: 300;
             letter-spacing: 0.18em;
@@ -45,109 +48,138 @@
             color: var(--branco-puro);
         }
 
-        /* --- PORTFOLIO HEADER --- */
         .portfolio-header {
-            padding: 180px 8% 60px 8%;
+            padding: 160px 8% 40px 8%;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .portfolio-header .tag {
-            font-size: 0.65rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--ouro-envelhecido);
-            display: block;
-            margin-bottom: 15px;
         }
 
         .portfolio-header h1 {
             font-size: 2.5rem;
-            margin-bottom: 25px;
-        }
-
-        .portfolio-header p {
-            font-size: 0.95rem;
-            color: #777;
-        }
-
-        /* --- ARCHITECTURAL ASYMMETRIC GRID --- */
-        .grid-portfolio {
-            padding: 40px 8% 120px 8%;
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 40px;
-            row-gap: 80px;
-        }
-
-        .obra-card {
-            position: relative;
-            background-color: var(--preto-suave);
-            border: 1px solid rgba(224, 224, 224, 0.02);
-            padding: 20px;
-            transition: var(--transicao-seda);
-        }
-
-        .obra-card:hover {
-            border-color: rgba(140, 115, 51, 0.2);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-        }
-
-        .obra-img-wrapper {
-            width: 100%;
-            overflow: hidden;
-            background-color: #000;
             margin-bottom: 20px;
         }
 
-        .obra-img-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            opacity: 0.8;
-            filter: grayscale(30%);
+        .portfolio-header p {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .filtro-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+
+        .filtro-btn {
+            background: transparent;
+            border: none;
+            color: #555;
+            font-family: var(--fonte-corpo);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding-bottom: 6px;
+            border-bottom: 1px solid transparent;
             transition: var(--transicao-seda);
         }
 
-        .obra-card:hover .obra-img-wrapper img {
+        .filtro-btn:hover, .filtro-btn.ativo {
+            color: var(--dourado-brilhante);
+            border-bottom: 1px solid var(--ouro-envelhecido);
+        }
+
+        .galeria-grid {
+            padding: 0 8% 120px 8%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+        }
+
+        .obra-item {
+            grid-column: span 4;
+            background-color: var(--preto-suave);
+            border: 1px solid rgba(224, 224, 224, 0.02);
+            overflow: hidden;
+            transition: var(--transicao-seda);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .obra-item.monumental { grid-column: span 8; }
+        .obra-item.vertical { grid-row: span 2; }
+
+        .obra-wrapper-img {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .obra-item.vertical .obra-wrapper-img { height: 600px; }
+        .obra-item.monumental .obra-wrapper-img { height: 450px; }
+        .obra-item .obra-wrapper-img { height: 350px; }
+
+        .obra-wrapper-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: transform 1.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.8s ease;
+        }
+
+        .obra-item:hover .obra-wrapper-img img {
             transform: scale(1.03);
-            opacity: 1;
-            filter: grayscale(0%);
+            opacity: 0.95;
         }
 
-        .obra-info h3 {
-            font-size: 0.85rem;
+        .obra-info {
+            padding: 25px 20px;
+            background: var(--preto-suave);
+            border-top: 1px solid rgba(140, 115, 51, 0.05);
+        }
+
+        .obra-info h2 {
+            font-size: 0.95rem;
             letter-spacing: 2px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            color: var(--branco-puro);
         }
 
-        .obra-info span {
-            font-size: 0.65rem;
+        .obra-meta {
+            font-size: 0.7rem;
             text-transform: uppercase;
-            color: var(--ouro-envelhecido);
             letter-spacing: 1px;
+            color: var(--ouro-envelhecido);
             display: block;
             margin-bottom: 10px;
         }
 
-        .obra-info p {
-            font-size: 0.8rem;
-            color: #666;
-            text-align: justify;
+        .obra-descricao {
+            font-size: 0.78rem;
+            color: var(--prata-escovado);
+            line-height: 1.6;
+            letter-spacing: 0.5px;
         }
 
-        /* Posicionamiento Asimétrico del Grid Premium */
-        .card-1 { grid-column: span 7; }
-        .card-2 { grid-column: span 5; margin-top: 100px; }
-        .card-3 { grid-column: span 5; }
-        .card-4 { grid-column: span 7; margin-top: -60px; }
+        .obra-item.oculto { display: none; }
 
-        /* --- RESPONSIVENESS --- */
-        @media (max-width: 992px) {
-            .grid-portfolio { display: flex; flex-direction: column; gap: 60px; padding: 40px 5% 80px 5%; }
-            .obra-card { margin-top: 0 !important; }
-            .portfolio-header { padding: 140px 5% 40px 5%; }
+        @media (max-width: 1024px) {
+            .obra-item, .obra-item.monumental { grid-column: span 6; }
+        }
+
+        @media (max-width: 768px) {
+            .filtro-container { gap: 15px; }
+            .galeria-grid { grid-template-columns: 1fr; padding: 0 5% 80px 5%; gap: 30px; }
+            .obra-item, .obra-item.monumental { grid-column: span 12; }
+            .obra-wrapper-img,
+            .obra-item.vertical .obra-wrapper-img,
+            .obra-item.monumental .obra-wrapper-img { height: 300px; }
         }
     </style>
 </head>
@@ -156,63 +188,185 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <header class="portfolio-header">
-            <span class="tag">Catálogo de Obras Maestras</span>
-            <h1>Esculturas Seleccionadas</h1>
-            <p>Una rigurosa selección de obras de autor que exploran la escala volumétrica, las curvas matemáticas y la interacción permanente con el aire libre y los espacios de lujo.</p>
-        </header>
+        <section class="portfolio-header">
+            <h1>Colección & Obras</h1>
+            <p>La manifestación tridimensional de la forma a través del tiempo y los elementos nobles</p>
 
-        <section class="grid-portfolio">
-            
-            <article class="obra-card card-1">
-                <div class="obra-img-wrapper">
-                    <img src="../assets/images/og-image-preview.jpg" alt="Escultura de metal abstracta monumental por Emanuel Nunes">
-                </div>
-                <div class="obra-info">
-                    <h3>La Fluidez de la Forma</h3>
-                    <span>Acero Inoxidable y Níquel Pulido</span>
-                    <p>Instalación arquitectónica a gran escala diseñada para contrastar la estructura geométrica con el movimiento orgánico, creando dinámicas de espejo bajo la iluminación natural.</p>
-                </div>
-            </article>
-
-            <article class="obra-card card-2">
-                <div class="obra-img-wrapper">
-                    <img src="../assets/images/og-image-preview.jpg" alt="Instalación corporativa de bronce de alta gama por Emanuel Nunes">
-                </div>
-                <div class="obra-info">
-                    <h3>Tensión Espacial</h3>
-                    <span>Bronce Fundido y Pátina Ácida Oscura</span>
-                    <p>Un estudio sobre la gravedad y la densidad, desarrollado exclusivamente para vestíbulos de edificios ejecutivos y colecciones corporativas privadas de alto nivel.</p>
-                </div>
-            </article>
-
-            <article class="obra-card card-3">
-                <div class="obra-img-wrapper">
-                    <img src="../assets/images/og-image-preview.jpg" alt="Arte fino de acero espejado por Emanuel Nunes">
-                </div>
-                <div class="obra-info">
-                    <h3>Horizonte Reflejado</h3>
-                    <span>Acero Inoxidable Quirúrgico</span>
-                    <p>Diseñada para entornos abiertos, esta pieza absorbe los colores urbanos, las texturas y los paisajes a través de un acabado pulido espejo absoluto.</p>
-                </div>
-            </article>
-
-            <article class="obra-card card-4">
-                <div class="obra-img-wrapper">
-                    <img src="../assets/images/og-image-preview.jpg" alt="Obra de metal figurativa por Emanuel Nunes">
-                </div>
-                <div class="obra-info">
-                    <h3>Anatomía del Movimiento</h3>
-                    <span>Metal Texturizado y Detalles en Espejo</span>
-                    <p>Una elegante exploración de expresiones figurativas combinadas con un fino trabajo en metal industrial, creando sombras y profundos contrastes de lujo.</p>
-                </div>
-            </article>
-
+            <div class="filtro-container" role="tablist">
+                <button class="filtro-btn ativo" onclick="filtrarObras(this, 'todas')">Todas las Piezas</button>
+                <button class="filtro-btn" onclick="filtrarObras(this, 'inox')">Acero Inoxidable</button>
+                <button class="filtro-btn" onclick="filtrarObras(this, 'corten')">Acero Corten</button>
+                <button class="filtro-btn" onclick="filtrarObras(this, 'monumental')">Escala Monumental</button>
+                <button class="filtro-btn" onclick="filtrarObras(this, 'painel')">Paneles</button>
+            </div>
         </section>
+
+        <div class="galeria-grid">
+
+            <!-- obra1 -->
+            <article class="obra-item" data-material="corten">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra1.jpg" alt="Guardián de la Naturaleza — escultura en acero corten de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Guardián de la Naturaleza</h2>
+                    <span class="obra-meta">Acero Corten — Integrado con la Naturaleza</span>
+                    <p class="obra-descricao">La oxidación natural del corten funde la escultura con el paisaje, creando una pieza viva que evoluciona con las estaciones.</p>
+                </div>
+            </article>
+
+            <!-- obra2 -->
+            <article class="obra-item monumental" data-material="monumental">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra2.jpg" alt="Cascada Plateada — escultura en acero inoxidable de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Cascada Plateada</h2>
+                    <span class="obra-meta">Acero Inoxidable Pulido — Instalación Monumental</span>
+                    <p class="obra-descricao">Una pieza de impacto instalada en un lobby de alto nivel, donde la geometría y el metal pulido dialogan con la arquitectura contemporánea.</p>
+                </div>
+            </article>
+
+            <!-- obra3 -->
+            <article class="obra-item" data-material="painel">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra3.jpg" alt="Lazos — panel escultórico rojo de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Lazos</h2>
+                    <span class="obra-meta">Acero Lacado — Panel Mural</span>
+                    <p class="obra-descricao">Una composición en rojo intenso que explora la tensión entre formas fragmentadas, evocando conexiones y rupturas humanas.</p>
+                </div>
+            </article>
+
+            <!-- obra4 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra4.jpg" alt="Instalación metálica suspendida de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Flujo Suspendido</h2>
+                    <span class="obra-meta">Acero Inoxidable Cepillado — Instalación Aérea</span>
+                    <p class="obra-descricao">Una pieza instalada en el techo, creando una experiencia inmersiva de movimiento congelado en metal pulido.</p>
+                </div>
+            </article>
+
+            <!-- obra5 -->
+            <article class="obra-item" data-material="monumental">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra5.jpg" alt="Escultura para la constructora FG de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Estructura Viva</h2>
+                    <span class="obra-meta">Acero Inoxidable — Constructora FG</span>
+                    <p class="obra-descricao">Encargo exclusivo para la colección de la Constructora FG, integrando arte e identidad corporativa a escala monumental.</p>
+                </div>
+            </article>
+
+            <!-- obra6 -->
+            <article class="obra-item" data-material="painel">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra6.jpg" alt="Panel en oro envejecido de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Oro del Tiempo</h2>
+                    <span class="obra-meta">Metal — Baño en Oro Envejecido</span>
+                    <p class="obra-descricao">Panel con acabado en oro envejecido que aporta la pátina del tiempo como elemento estético central de la composición.</p>
+                </div>
+            </article>
+
+            <!-- obra7 -->
+            <article class="obra-item" data-material="corten">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra7.jpg" alt="Escultura en acero corten integrada a la naturaleza de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Raíces de Hierro</h2>
+                    <span class="obra-meta">Acero Corten — Integrado con la Naturaleza</span>
+                    <p class="obra-descricao">La oxidación natural del corten funde la escultura con el paisaje, creando una pieza viva que evoluciona con las estaciones.</p>
+                </div>
+            </article>
+
+            <!-- obra8 -->
+            <article class="obra-item monumental" data-material="painel">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra8.jpg" alt="Cosmos — paneles geométricos de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Cosmos</h2>
+                    <span class="obra-meta">Metal — Paneles Geométricos</span>
+                    <p class="obra-descricao">Conjunto de paneles que reinterpreta la estructura del universo en facetas metálicas, creando una constelación de volúmenes y reflejos.</p>
+                </div>
+            </article>
+
+            <!-- obra9 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra9.jpg" alt="Obra en metal de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Título por Definir</h2>
+                    <span class="obra-meta">Acero Inoxidable</span>
+                    <p class="obra-descricao">Descripción próximamente.</p>
+                </div>
+            </article>
+
+            <!-- obra10 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra10.jpg" alt="Enamorados — escultura figurativa de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Enamorados</h2>
+                    <span class="obra-meta">Acero Inoxidable Pulido — Figurativo</span>
+                    <p class="obra-descricao">Escultura figurativa que captura el instante del encuentro entre dos cuerpos, eternizando el gesto del amor en metal espejado.</p>
+                </div>
+            </article>
+
+            <!-- obra11 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra11.jpg" alt="Obra en metal de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Título por Definir</h2>
+                    <span class="obra-meta">Acero Inoxidable</span>
+                    <p class="obra-descricao">Descripción próximamente.</p>
+                </div>
+            </article>
+
+            <!-- obra12 -->
+            <article class="obra-item" data-material="inox">
+                <div class="obra-wrapper-img">
+                    <img src="../assets/images/obra12.jpg" alt="Obra en metal de Emanuel Nunes">
+                </div>
+                <div class="obra-info">
+                    <h2>Título por Definir</h2>
+                    <span class="obra-meta">Acero Inoxidable</span>
+                    <p class="obra-descricao">Descripción próximamente.</p>
+                </div>
+            </article>
+
+        </div>
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/main.js?v=3"></script>
+    <script>
+        function filtrarObras(btn, categoria) {
+            document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
+            btn.classList.add('ativo');
+            document.querySelectorAll('.obra-item').forEach(item => {
+                const material = item.getAttribute('data-material');
+                if (categoria === 'todas' || material === categoria) {
+                    item.classList.remove('oculto');
+                } else {
+                    item.classList.add('oculto');
+                }
+            });
+        }
+    </script>
+
 </body>
 </html>

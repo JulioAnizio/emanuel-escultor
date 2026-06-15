@@ -4,24 +4,283 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruta del Artista | Obras Monumentales — Emanuel Nunes</title>
-    <meta name="description" content="Explore las ubicaciones globales de las esculturas monumentales de Emanuel Nunes. Un mapa de la trayectoria y obras públicas del artista.">
+    <meta name="description" content="Explore la trayectoria de vida y la distribución global de las esculturas monumentales de Emanuel Nunes — desde Maputo hasta el taller en Balneário Camboriú.">
+    <link rel="canonical" href="https://emanuelnunes.com/es/mapa.html">
+    <link rel="icon" href="../assets/images/favicon.jpg" type="image/jpeg">
+
+    <meta property="og:title" content="Ruta del Artista | Emanuel Nunes — Escultor">
+    <meta property="og:description" content="La trayectoria de vida y las obras monumentales de Emanuel Nunes por el mundo.">
+    <meta property="og:image" content="https://emanuelnunes.com/assets/images/og-image.png">
+    <meta property="og:url" content="https://emanuelnunes.com/es/mapa.html">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
     <style>
-        body { background-color: #050505; color: #b5b5b7; font-family: 'Montserrat', sans-serif; }
-        .mapa-container { padding: 180px 8% 100px 8%; text-align: center; }
-        .mapa-placeholder { width: 100%; height: 600px; background: #0f0f0f; border: 1px solid #333; margin-top: 40px; display: flex; align-items: center; justify-content: center; color: #8c7333; }
-        h1 { font-family: 'Playfair Display', serif; color: #fff; margin-bottom: 20px; }
+        :root {
+            --preto-luxo: #050505;
+            --preto-suave: #0f0f0f;
+            --prata-escovado: #b5b5b7;
+            --dourado-brilhante: #d4af37;
+            --ouro-envelhecido: #8c7333;
+            --branco-puro: #ffffff;
+            --fonte-titulo: 'Playfair Display', serif;
+            --fonte-corpo: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--preto-luxo);
+            color: var(--prata-escovado);
+            font-family: var(--fonte-corpo);
+            font-weight: 300;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1, h2 {
+            font-family: var(--fonte-titulo);
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--branco-puro);
+        }
+
+        .mapa-container {
+            padding: 160px 8% 100px 8%;
+            text-align: center;
+        }
+
+        .mapa-container h1 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+        }
+
+        .mapa-container > p {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+        }
+
+        .legenda {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        .legenda span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legenda .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.atelie { background-color: var(--dourado-brilhante); box-shadow: 0 0 8px var(--dourado-brilhante); }
+        .dot.vida { background-color: #6fa8d8; }
+        .dot.obra { background-color: #b5b5b7; }
+
+        #mapa {
+            width: 100%;
+            height: 600px;
+            border: 1px solid rgba(140, 115, 51, 0.2);
+        }
+
+        .leaflet-popup-content-wrapper {
+            background: var(--preto-suave);
+            color: var(--prata-escovado);
+            border: 1px solid rgba(140, 115, 51, 0.3);
+            border-radius: 0;
+        }
+
+        .leaflet-popup-tip {
+            background: var(--preto-suave);
+        }
+
+        .popup-titulo {
+            font-family: var(--fonte-titulo);
+            color: var(--branco-puro);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .popup-texto {
+            font-size: 0.75rem;
+            color: #999;
+            line-height: 1.5;
+        }
+
+        .popup-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--dourado-brilhante);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .popup-link:hover {
+            color: var(--branco-puro);
+        }
+
+        @media (max-width: 768px) {
+            .mapa-container { padding: 120px 5% 60px 5%; }
+            #mapa { height: 450px; }
+            #mapa-atelie { height: 350px; }
+        }
+
+        .atelie-section {
+            margin-top: 80px;
+        }
+
+        .atelie-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .atelie-endereco {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        #mapa-atelie {
+            width: 100%;
+            height: 400px;
+            border: 1px solid rgba(140, 115, 51, 0.2);
+        }
     </style>
 </head>
 <body>
+
     <div id="header-placeholder"></div>
+
     <main class="mapa-container">
         <h1>Ruta del Artista</h1>
-        <p>Siga la distribución global de las obras monumentales de Emanuel Nunes.</p>
-        <div class="mapa-placeholder">
-            <p>Mapa interactivo cargando...</p>
+        <p>Desde la infancia en Maputo hasta el taller en Balneário Camboriú — la trayectoria y las obras monumentales de Emanuel Nunes por el mundo</p>
+
+        <div class="legenda">
+            <span><i class="dot atelie"></i> Taller & Residencia</span>
+            <span><i class="dot vida"></i> Trayectoria de Vida</span>
+            <span><i class="dot obra"></i> Obras Expuestas</span>
+        </div>
+
+        <div id="mapa"></div>
+
+        <div class="atelie-section">
+            <h2>Visite el Taller</h2>
+            <p class="atelie-endereco">Rua José Watson, 247 — Balneário Camboriú, SC, Brasil</p>
+            <div id="mapa-atelie"></div>
         </div>
     </main>
+
     <div id="footer-placeholder"></div>
-    <script src="../assets/js/main.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const map = L.map('mapa', { scrollWheelZoom: false }).setView([20, 10], 2);
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(map);
+
+            function criarIcone(cor, tamanho) {
+                return L.divIcon({
+                    className: '',
+                    html: `<div style="width:${tamanho}px;height:${tamanho}px;border-radius:50%;background:${cor};box-shadow:0 0 10px ${cor};border:2px solid #050505;"></div>`,
+                    iconSize: [tamanho, tamanho],
+                    iconAnchor: [tamanho/2, tamanho/2]
+                });
+            }
+
+            const iconeAtelie = criarIcone('#d4af37', 18);
+            const iconeVida = criarIcone('#6fa8d8', 12);
+            const iconeObra = criarIcone('#b5b5b7', 10);
+
+            // --- TALLER (destacado) ---
+            L.marker([-26.9576527, -48.6379065], { icon: iconeAtelie })
+                .addTo(map)
+                .bindPopup(`<span class="popup-titulo">Taller Emanuel Nunes</span><span class="popup-texto">Balneário Camboriú, Brasil — residencia y taller desde 2010, donde el artista crea sus obras monumentales.</span><a href="https://www.google.com/maps?q=-26.9576527,-48.6379065" target="_blank" rel="noopener" class="popup-link">Abrir en Google Maps →</a>`);
+
+            // --- TRAYECTORIA DE VIDA ---
+            const vida = [
+                { coords: [-25.9692, 32.5732], titulo: "Maputo, Mozambique", texto: "Lugar de nacimiento de Emanuel Nunes, en 1968." },
+                { coords: [-13.9626, 33.7741], titulo: "Malawi", texto: "Adonde la familia emigró en 1974, donde Emanuel realizó sus estudios primarios." },
+                { coords: [38.7223, -9.1393], titulo: "Lisboa, Portugal", texto: "Llegada en 1977. Formación en la Escuela Industrial y en la Escuela de Bellas Artes." },
+                { coords: [40.4168, -3.7038], titulo: "España", texto: "Especialización en fundición a la cera perdida en la Fundición K." },
+                { coords: [48.8606, 2.3376], titulo: "París, Francia", texto: "Especialización en la Fundición del Museo del Louvre." },
+                { coords: [-27.2154, -49.6438], titulo: "Rio do Sul, Brasil", texto: "Residencia entre 2007 y 2010, inicio de la carrera como escultor independiente en Brasil." }
+            ];
+
+            vida.forEach(p => {
+                L.marker(p.coords, { icon: iconeVida })
+                    .addTo(map)
+                    .bindPopup(`<span class="popup-titulo">${p.titulo}</span><span class="popup-texto">${p.texto}</span>`);
+            });
+
+            // --- OBRAS EXPUESTAS INTERNACIONALMENTE ---
+            const obras = [
+                { coords: [37.1393, -8.5380], titulo: "Portimão, Portugal", texto: "La mayor escultura jamás expuesta en la ciudad — 12 metros de altura y 20 toneladas." },
+                { coords: [22.1987, 113.5439], titulo: "Macao, China", texto: "Reproducción de la Diosa Kun Iam (25m, 50 toneladas), regalo del gobierno portugués." },
+                { coords: [55.7558, 37.6173], titulo: "Moscú, Rusia", texto: "Obras en espacios públicos y privados." },
+                { coords: [41.0082, 28.9784], titulo: "Turquía", texto: "Obras en espacios públicos y privados." },
+                { coords: [41.9028, 12.4964], titulo: "Italia", texto: "Obras en espacios públicos y privados." },
+                { coords: [52.3676, 4.9041], titulo: "Países Bajos", texto: "Obras en espacios públicos y privados." },
+                { coords: [32.6669, -16.9241], titulo: "Madeira, Portugal", texto: "Obras en espacios públicos y privados." },
+                { coords: [37.7412, -25.6756], titulo: "Azores, Portugal", texto: "Obras en espacios públicos y privados." },
+                { coords: [46.9480, 7.4474], titulo: "Suiza", texto: "Obras en espacios públicos y privados." },
+                { coords: [40.4637, -3.7492], titulo: "España", texto: "Obras en espacios públicos y privados." },
+                { coords: [40.7128, -74.0060], titulo: "Estados Unidos", texto: "Obras en espacios públicos y privados." }
+            ];
+
+            obras.forEach(p => {
+                L.marker(p.coords, { icon: iconeObra })
+                    .addTo(map)
+                    .bindPopup(`<span class="popup-titulo">${p.titulo}</span><span class="popup-texto">${p.texto}</span>`);
+            });
+
+            // --- MAPA LOCAL DEL TALLER ---
+            const mapaAtelie = L.map('mapa-atelie', { scrollWheelZoom: false }).setView([-26.9576527, -48.6379065], 15);
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(mapaAtelie);
+
+            L.marker([-26.9576527, -48.6379065], { icon: criarIcone('#d4af37', 20) })
+                .addTo(mapaAtelie)
+                .bindPopup(`<span class="popup-titulo">Taller Emanuel Nunes</span><span class="popup-texto">Rua José Watson, 247 — Balneário Camboriú, SC, Brasil</span><a href="https://www.google.com/maps?q=-26.9576527,-48.6379065" target="_blank" rel="noopener" class="popup-link">Abrir en Google Maps →</a>`)
+                .openPopup();
+        });
+    </script>
+
+    <script src="../assets/js/main.js?v=3"></script>
+
 </body>
 </html>

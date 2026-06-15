@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Historia y Trayectoria | Emanuel Nunes — Escultor Monumental</title>
-    <meta name="description" content="Descubra la historia, el concepto y la evolución técnica de Emanuel Nunes. La trayectoria internacional de un escultor especializado en metales nobles y grandes escalas urbanas.">
-    <link rel="canonical" href="https://emanuelnunes.pt/es/biografia.html">
+    <title>Historia & Trayectoria | Emanuel Nunes — Escultor Monumental</title>
+    <meta name="description" content="Conozca la historia, concepto y evolución técnica de Emanuel Nunes. La trayectoria internacional de un escultor especializado en metales nobles, fundición a la cera perdida y grandes proporciones urbanas.">
+    <meta name="keywords" content="Biografia Emanuel Nunes, historia escultor, exposiciones arte contemporaneo, trayectoria Emanuel Nunes, escultor portugues, arte monumental internacional, Fundarte">
+    <link rel="canonical" href="https://emanuelnunes.com/es/biografia.html">
+    <link rel="icon" href="../assets/images/favicon.jpg" type="image/jpeg">
+
+    <meta property="og:title" content="Historia & Trayectoria | Emanuel Nunes — Escultor Monumental">
+    <meta property="og:description" content="La trayectoria internacional de Emanuel Nunes, escultor especializado en metales nobles y fundición a la cera perdida.">
+    <meta property="og:image" content="https://emanuelnunes.com/assets/images/og-image.png">
+    <meta property="og:url" content="https://emanuelnunes.com/es/biografia.html">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* --- CORE CSS (MANTEIENDO EL ESTÁNDAR) --- */
         :root {
             --preto-luxo: #050505;
             --preto-suave: #0f0f0f;
@@ -19,7 +24,6 @@
             --dourado-brilhante: #d4af37;
             --ouro-envelhecido: #8c7333;
             --branco-puro: #ffffff;
-            
             --fonte-titulo: 'Playfair Display', serif;
             --fonte-corpo: 'Montserrat', sans-serif;
             --transicao-seda: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -27,21 +31,169 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body { background-color: var(--preto-luxo); color: var(--prata-escovado); font-family: var(--fonte-corpo); font-weight: 300; line-height: 1.8; overflow-x: hidden; }
-        
-        h1, h2 { font-family: var(--fonte-titulo); font-weight: 300; letter-spacing: 0.18em; text-transform: uppercase; color: var(--branco-puro); }
+        body {
+            background-color: var(--preto-luxo);
+            color: var(--prata-escovado);
+            font-family: var(--fonte-corpo);
+            font-weight: 300;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
 
-        /* Estructura de la Sección */
-        .secao-luxo { padding: 140px 8%; display: flex; align-items: center; gap: 80px; }
-        .conteudo-texto { flex: 1.2; }
-        .conteudo-texto .tag { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ouro-envelhecido); display: block; margin-bottom: 15px; }
-        .conteudo-texto h2 { font-size: 2.5rem; margin-bottom: 30px; }
-        .conteudo-texto p { font-size: 0.95rem; color: #888; margin-bottom: 25px; text-align: justify; }
-        .conteudo-imagem { flex: 0.8; border: 1px solid rgba(140, 115, 51, 0.2); padding: 15px; background: var(--preto-suave); }
-        .conteudo-imagem img { width: 100%; height: auto; filter: grayscale(100%); transition: var(--transicao-seda); }
-        .conteudo-imagem:hover img { filter: grayscale(20%); }
+        h1, h2, h3 {
+            font-family: var(--fonte-titulo);
+            font-weight: 300;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--branco-puro);
+        }
 
-        @media (max-width: 992px) { .secao-luxo { flex-direction: column; padding: 120px 5% 60px 5%; gap: 50px; } }
+        .bio-intro {
+            padding: 180px 8% 80px 8%;
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .bio-texto-bloco { flex: 1.2; }
+
+        .bio-texto-bloco .tag {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ouro-envelhecido);
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .bio-texto-bloco h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .bio-texto-bloco p {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .bio-texto-bloco p strong {
+            color: var(--branco-puro);
+            font-weight: 400;
+        }
+
+        .bio-perfil-img {
+            flex: 0.8;
+            border: 1px solid rgba(140, 115, 51, 0.2);
+            padding: 15px;
+            background: var(--preto-suave);
+            align-self: flex-start;
+            position: sticky;
+            top: 140px;
+        }
+
+        .bio-perfil-img img {
+            width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.8;
+            transition: var(--transicao-seda);
+        }
+
+        .bio-perfil-img:hover img {
+            filter: grayscale(20%);
+            opacity: 1;
+        }
+
+        .timeline-section {
+            background-color: var(--preto-suave);
+            padding: 100px 8%;
+            border-top: 1px solid rgba(224, 224, 224, 0.02);
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            margin-bottom: 80px;
+            font-size: 2rem;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background-color: rgba(140, 115, 51, 0.3);
+            top: 0; bottom: 0; left: 50%;
+            margin-left: -0.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: transparent;
+            width: 50%;
+        }
+
+        .timeline-item.esquerda { left: 0; text-align: right; }
+        .timeline-item.direita { left: 50%; text-align: left; }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 10px; height: 10px;
+            right: -5px;
+            background-color: var(--preto-luxo);
+            border: 2px solid var(--dourado-brilhante);
+            top: 15px; border-radius: 50%; z-index: 1;
+            transition: var(--transicao-seda);
+        }
+
+        .timeline-item.direita::after { left: -5px; }
+
+        .timeline-item:hover::after {
+            background-color: var(--dourado-brilhante);
+            box-shadow: 0 0 10px var(--dourado-brilhante);
+        }
+
+        .date-badge {
+            font-family: var(--fonte-titulo);
+            font-size: 1.4rem;
+            color: var(--dourado-brilhante);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .timeline-item h3 {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        @media (max-width: 992px) {
+            .bio-intro { flex-direction: column; padding: 120px 5% 60px 5%; gap: 50px; }
+            .bio-texto-bloco p { text-align: center; }
+            .bio-texto-bloco h1 { text-align: center; }
+            .bio-perfil-img { position: static; }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; text-align: left !important; }
+            .timeline-item.direita { left: 0; }
+            .timeline-item::after, .timeline-item.direita::after { left: 26px; }
+        }
     </style>
 </head>
 <body>
@@ -49,22 +201,111 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <section class="secao-luxo">
-            <div class="conteudo-texto">
+        <section class="bio-intro">
+            <div class="bio-texto-bloco">
                 <span class="tag">La Mente Detrás del Metal</span>
-                <h2>La Filosofía del Volumen y el Espacio</h2>
-                <p>Escultor y artista plástico portugués, nacido en Mozambique (Continente Africano) y criado en Portugal, <strong>Emanuel Nunes</strong> posee en su firma una profunda conexión con sus raíces multiculturales y experiencias vividas en diversos continentes.</p>
-                <p>Su trayectoria de formación técnica comenzó temprano: de los 16 a los 18 años, asistió a la <strong>Escuela de Bellas Artes</strong>, donde refinó su percepción tridimensional en los talleres de grandes maestros de la escultura, como João Fragoso y Dorita Castelo Branco — mentora cuyo oficio siguió de cerca durante diez años. Ampliando las fronteras de su conocimiento técnico, Emanuel se especializó en fundición en la prestigiosa <strong>Fundición K (técnica de cera perdida)</strong> en España, y en la reconocida <strong>Fundición del Museo del Louvre</strong>, en Francia.</p>
-                <p>Radicado actualmente en Balneário Camboriú, Brasil, y acumulando más de tres décadas de experiencia, el artista es reconocido internacionalmente. Sus esculturas monumentales en acero y mármol están presentes en museos y espacios públicos de países como <strong>Portugal, Turquía, Francia e Italia</strong>. Cada obra es meticulosamente diseñada para establecer un diálogo activo y fluido con el espacio, el movimiento y el observador, dejando un legado permanente de inspiración dentro de la alta arquitectura y las colecciones de arte fino.</p>
+                <h1>La Filosofía del Volumen y el Espacio</h1>
+
+                <p><strong>Emanuel Nunes</strong> nació en Maputo, Mozambique, en 1968, hijo de padres portugueses — la madre analista química, el padre técnico en metalurgia y artista plástico por elección. De esa convivencia nació su interés temprano por las artes y las grandes construcciones. En 1974, la familia emigró a Malawi, donde Emanuel realizó sus estudios primarios, llegando a Lisboa en 1977, a los nueve años de edad.</p>
+
+                <p>Su formación técnica comenzó en la <strong>Escuela Industrial de Lisboa</strong>, donde se profesionalizó en la técnica de fundición. Entre los 16 y los 18 años, asistió a la <strong>Escuela de Bellas Artes</strong> como alumno asistente, formándose en los talleres de grandes maestros de la escultura como João Fragoso y Dorita Castelo Branco, mentora con quien trabajó durante diez años, hasta el final de su vida.</p>
+
+                <p>Entre los 18 y los 21 años, se especializó en la técnica de <strong>cera perdida</strong> en la Fundición K, en España, y en la Fundición del Museo del Louvre, en Francia — paralelamente, asistió durante cinco años al Laboratorio Nacional de Ingeniería Civil (LNEC). Fue en ese universo donde se identificó como la <strong>"tercera mano" del artista</strong>: aquella que nunca aparece, pero que transforma el barro, el yeso o el dibujo en cualquier escala y material. En 1985 fundó <strong>Fundarte</strong>, su propia empresa de fundición y restauración de obras de gran formato, activa hasta 2005, con diez colaboradores y su propio padre entre ellos.</p>
+
+                <p>Por sus manos pasaron piezas como la mayor escultura jamás expuesta en Portimão — 12 metros de altura y 20 toneladas — y la reproducción de la Diosa Kun Iam, con 25 metros y 50 toneladas, regalo del gobierno portugués a Macao el día en que el territorio pasó a ser administrado por China. Todas sus obras, certificadas con el sello de Fundarte, se encuentran hoy en museos y espacios públicos y privados de <strong>Portugal, Moscú, Turquía, Francia, Italia, Países Bajos, Madeira, Azores, Suiza, España y Estados Unidos</strong>.</p>
+
+                <p>En 2004, la muerte de su madre — la persona que siempre lo comprendió, apoyó y creyó en su talento — marcó un punto de inflexión. Fue ese momento el que lo llevó a replantear su trayectoria profesional y personal.</p>
+
+                <p>En 2005, un viaje a Brasil despertó un deseo antiguo: ser autor de sus propias esculturas. Con el apoyo de amigos portugueses radicados en el país, Emanuel comenzó a trabajar en diversas áreas en São Paulo, Río de Janeiro y otros estados, postergando su regreso a Lisboa. En 2007, un viaje de trabajo lo llevó a Santa Catarina — se identificó de inmediato con la gente y la cultura y decidió no regresar a Portugal. Durante tres años vivió en Rio do Sul, desarrollando su nueva carrera como escultor independiente.</p>
+
+                <p>En 2010, se mudó a <strong>Balneário Camboriú</strong> y abrió su propio taller, dedicándose a obras para edificios, residencias, plazas, parques y jardines, además de participar en exposiciones por todo Brasil. En 2011, obtuvo la ciudadanía brasileña y asumió la vicepresidencia de la Asociación de Artistas Plásticos y Preservación de la Naturaleza (ACAPPMA).</p>
+
+                <p>En 2017, perdió a su padre, Eduardo Rafael — el gran influenciador y motivador de su carrera como artista, su mentor e ídolo de infancia, con quien pasaba horas de niño admirándolo pintar los paisajes de la selva africana. Hoy, con más de tres décadas de experiencia, Emanuel mantiene viva esa herencia técnica y afectiva, aplicada a sus propias creaciones monumentales en acero y metal.</p>
             </div>
-            
-            <div class="conteudo-imagem">
+
+            <div class="bio-perfil-img">
                 <img src="../assets/images/emanuel-perfil.jpg" alt="Retrato en blanco y negro del escultor Emanuel Nunes">
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2>Hitos Históricos</h2>
+
+            <div class="timeline-container">
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">1968</span>
+                    <h3>Orígenes en Maputo</h3>
+                    <p>Nacimiento en Mozambique, hijo de un metalúrgico y artista plástico — primer contacto con el arte y la materia.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">1977</span>
+                    <h3>Llegada a Lisboa</h3>
+                    <p>Tras años en Malawi, la familia se instala en Lisboa. Inicio de la formación en la Escuela Industrial y en la técnica de fundición.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">1984–1986</span>
+                    <h3>Escuela de Bellas Artes</h3>
+                    <p>Alumno asistente en los talleres de João Fragoso y Dorita Castelo Branco, mentora con quien trabajó durante diez años.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">1985</span>
+                    <h3>Cera Perdida & Fundarte</h3>
+                    <p>Especialización en la Fundición K (España) y la Fundición del Louvre (Francia). Fundación de Fundarte, activa hasta 2005.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">Fundarte</span>
+                    <h3>Obras de Gran Escala</h3>
+                    <p>Mayor escultura expuesta en Portimão (12m, 20 toneladas) y reproducción de la Diosa Kun Iam (25m, 50 toneladas) para Macao.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">2004</span>
+                    <h3>Un Punto de Inflexión</h3>
+                    <p>La pérdida de su madre lleva a Emanuel a replantear su trayectoria profesional y personal.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">2005</span>
+                    <h3>Nueva Etapa en Brasil</h3>
+                    <p>Un viaje revela el deseo de ser autor de sus propias obras. Inicio de una nueva trayectoria como escultor independiente.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">2007</span>
+                    <h3>Santa Catarina</h3>
+                    <p>Se identifica con la gente y la cultura catarinense y decide no regresar a Portugal. Tres años en Rio do Sul.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">2010</span>
+                    <h3>Taller en Balneário Camboriú</h3>
+                    <p>Establece residencia y taller propio, dedicándose a obras para edificios, residencias, plazas y jardines.</p>
+                </div>
+
+                <div class="timeline-item direita">
+                    <span class="date-badge">2011</span>
+                    <h3>Ciudadanía Brasileña</h3>
+                    <p>Se naturaliza ciudadano brasileño y asume la vicepresidencia de ACAPPMA.</p>
+                </div>
+
+                <div class="timeline-item esquerda">
+                    <span class="date-badge">2017</span>
+                    <h3>Legado de Eduardo Rafael</h3>
+                    <p>Pérdida de su padre — mentor, ídolo de infancia y gran influencia en su carrera como artista.</p>
+                </div>
+
             </div>
         </section>
     </main>
 
     <div id="footer-placeholder"></div>
-    <script src="../assets/js/main.js"></script>
+
+    <script src="../assets/js/main.js?v=3"></script>
+
 </body>
 </html>

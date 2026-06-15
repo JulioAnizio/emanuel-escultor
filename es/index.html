@@ -2,42 +2,40 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Emanuel Nunes | Escultura Monumental y Arte Contemporáneo</title>
-    <meta name="description" content="Explore la obra monumental de Emanuel Nunes. Esculturas exclusivas en acero inoxidable, níquel y bronce que fusionan el movimiento fluido con la arquitectura de lujo.">
-    <meta name="keywords" content="Emanuel Nunes, escultor, escultura monumental, arte contemporáneo, escultura de acero, baño de níquel, coleccionistas de arte, arquitectura de lujo">
+    <title>Emanuel Nunes | Escultura Monumental & Arte de Lujo Contemporáneo</title>
+    <meta name="description" content="Descubra el arte monumental de Emanuel Nunes. Esculturas exclusivas en acero inoxidable, níquel y bronce que fusionan fluidez, movimiento y arquitectura de alto nivel.">
+    <meta name="keywords" content="Emanuel Nunes, escultor, escultura monumental, arte contemporaneo, acero inoxidable, bano de niquel, arquitectura de lujo, arte corporativo, coleccionistas privados">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://emanuelnunes.pt/es/index.html">
+    <link rel="canonical" href="https://emanuelnunes.com/es/index.html">
+    <link rel="icon" href="../assets/images/favicon.jpg" type="image/jpeg">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://emanuelnunes.pt/es/index.html">
-    <meta property="og:title" content="Emanuel Nunes | Escultura Monumental y Arte de Lujo">
-    <meta property="og:description" content="Esculturas metálicas imponentes que transforman el paisaje urbano y colecciones privadas de alto nivel.">
-    <meta property="og:image" content="https://emanuelnunes.pt/assets/images/og-image-preview.jpg">
+    <meta property="og:url" content="https://emanuelnunes.com/es/index.html">
+    <meta property="og:title" content="Emanuel Nunes | Escultura Monumental & Arte de Lujo">
+    <meta property="og:description" content="Obras de arte imponentes en metal pulido que transforman espacios urbanos y colecciones privadas.">
+    <meta property="og:image" content="https://emanuelnunes.com/assets/images/og-image.png">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "VisualArtwork",
-      "name": "Arte Monumental por Emanuel Nunes",
-      "image": "https://emanuelnunes.pt/assets/images/og-image-preview.jpg",
-      "description": "Esculturas contemporáneas a gran escala en metal, acero inoxidable y níquel.",
+      "name": "Arte Monumental de Emanuel Nunes",
+      "image": "https://emanuelnunes.com/assets/images/og-image.png",
+      "description": "Esculturas contemporáneas en metal, acero inoxidable y níquel de gran escala.",
       "creator": {
         "@type": "Person",
         "name": "Emanuel Nunes",
-        "jobTitle": "Escultor",
+        "jobTitle": "Sculptor",
         "sameAs": "https://instagram.com/emanuelnunesescultor"
       },
-      "material": "Acero Inoxidable, Níquel, Bronce"
+      "material": "Stainless Steel, Nickel, Bronze"
     }
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* --- CORE CSS (MATCHING THE LUXURY SPECIFICATIONS) --- */
         :root {
             --preto-luxo: #050505;
             --preto-suave: #0f0f0f;
@@ -45,7 +43,6 @@
             --dourado-brilhante: #d4af37;
             --ouro-envelhecido: #8c7333;
             --branco-puro: #ffffff;
-            
             --fonte-titulo: 'Playfair Display', serif;
             --fonte-corpo: 'Montserrat', sans-serif;
             --transicao-seda: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -70,7 +67,6 @@
             color: var(--branco-puro);
         }
 
-        /* --- HIGH-END BUTTON --- */
         .btn-premium {
             display: inline-block;
             padding: 16px 40px;
@@ -91,7 +87,6 @@
             box-shadow: 0 0 25px rgba(140, 115, 51, 0.25);
         }
 
-        /* --- HERO SECTION --- */
         .hero-monumental {
             height: 100vh;
             width: 100%;
@@ -99,7 +94,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9)), url('../assets/images/og-image-preview.jpg') no-repeat center center;
+            background: linear-gradient(rgba(5,5,5,0.5), rgba(5,5,5,0.85)),
+                        url('../assets/images/hero.jpg') no-repeat center center;
             background-size: cover;
             background-attachment: fixed;
         }
@@ -125,7 +121,6 @@
             color: var(--prata-escovado);
         }
 
-        /* --- ASYMMETRIC GALLERY SECTIONS --- */
         .secao-luxo {
             padding: 140px 8%;
             display: flex;
@@ -184,7 +179,44 @@
             opacity: 1;
         }
 
-        /* --- RESPONSIVENESS --- */
+        .botoes-flutuantes {
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            z-index: 9998;
+        }
+
+        .btn-flutuante {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-flutuante:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+        }
+
+        .btn-flutuante.whatsapp { background-color: #25D366; }
+        .btn-flutuante.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .btn-flutuante svg {
+            width: 26px;
+            height: 26px;
+            fill: #ffffff;
+        }
+
         @media (max-width: 992px) {
             .secao-luxo, .secao-luxo.inversa {
                 flex-direction: column;
@@ -202,42 +234,56 @@
     <div id="header-placeholder"></div>
 
     <main>
-        <section class="hero-monumental" aria-label="Emanuel Nunes Introducción">
+        <section class="hero-monumental" aria-label="Introducción Emanuel Nunes">
             <div class="hero-content">
-                <h1>El arte dando forma al espacio</h1>
-                <p>Esculturas Monumentales em Acero y Metal</p>
-                <a href="mapa.html" class="btn-premium" aria-label="Navegar al mapa geográfico del artista">Explorar Ruta del Artista</a>
+                <h1>Arte que moldea el espacio</h1>
+                <p>Esculturas Monumentales en Acero y Metal</p>
+                <a href="obras.html" class="btn-premium">Ver Colección</a>
             </div>
         </section>
 
         <section class="secao-luxo">
             <div class="conteudo-texto">
-                <span class="tag">Fluidez y Técnica</span>
-                <h2>Ligereza oculta na rigidez del metal</h2>
-                <p>La obra de Emanuel Nunes desafía la naturaleza misma de sus materiales. Sus creaciones cortan, doblan y texturizan metales nobles para extraer dinamismo y líneas orgánicas que parecen flotar armoniosamente en arquitecturas urbanas o colecciones privadas exclusivas.</p>
-                <a href="obras.html" class="btn-premium" aria-label="Ver la colección completa de obras">Ver Obras</a>
+                <span class="tag">Fluidez & Técnica</span>
+                <h2>La ligereza oculta en el metal rígido</h2>
+                <p>El trabajo de Emanuel Nunes desafía la propia naturaleza de los materiales. Sus creaciones cortan, doblan y texturizan metales nobles para extraer dinamismo y líneas orgánicas que parecen flotar en el espacio urbano o en colecciones privadas.</p>
+                <a href="obras.html" class="btn-premium">Conocer Obras</a>
             </div>
             <div class="conteudo-imagem">
-                <img src="../assets/images/og-image-preview.jpg" alt="Escultura figurativa de metal que muestra líneas finas y movimiento dinámico por Emanuel Nunes">
+                <img src="../assets/images/obra8.jpg" alt="Cosmos — paneles geométricos de Emanuel Nunes">
             </div>
         </section>
 
         <section class="secao-luxo inversa">
             <div class="conteudo-texto">
-                <span class="tag">Acabados Premium</span>
-                <h2>La perfección del reflejo absoluto</h2>
-                <p>Más allá de la pura forma volumétrica, su sello distintivo radica en la obsesión por el pulido de alta gama y los tratamientos químicos avanzados de superficies, como el baño de níquel personalizado y el manejo quirúrgico del acero inoxidable. La luz y los reflejos se convierten en parte activa de la experiencia escultórica.</p>
-                <a href="colecoes-privadas.html" class="btn-premium" aria-label="Solicitar acceso al catálogo privado">Solicitar Vista Privada</a>
+                <span class="tag">Acabado Premium</span>
+                <h2>La perfección del espejado</h2>
+                <p>Más allá de la forma y el volumen, la firma visual reside en la obsesión por el pulido y los tratamientos de superficie refinados, como el baño de níquel y el manejo quirúrgico del acero inoxidable. La luz y el reflejo pasan a ser parte activa de la escultura.</p>
+                <a href="contato.html" class="btn-premium">Contactar</a>
             </div>
             <div class="conteudo-imagem">
-                <img src="../assets/images/og-image-preview.jpg" alt="Escultura abstracta de metal con un exquisito acabado espejado en baño de níquel por Emanuel Nunes">
+                <img src="../assets/images/obra9.jpg" alt="Escultura en acero inoxidable pulido de Emanuel Nunes">
             </div>
         </section>
     </main>
 
     <div id="footer-placeholder"></div>
 
-    <script src="../assets/js/main.js?v=2"></script>
+    <!-- BOTONES FLOTANTES -->
+    <div class="botoes-flutuantes">
+        <a href="https://wa.me/5547988522380" target="_blank" rel="noopener" class="btn-flutuante whatsapp" aria-label="WhatsApp Emanuel Nunes">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+        <a href="https://instagram.com/emanuelnunesescultor" target="_blank" rel="noopener" class="btn-flutuante instagram" aria-label="Instagram Emanuel Nunes">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+        </a>
+    </div>
+
+    <script src="../assets/js/main.js?v=3"></script>
 
 </body>
 </html>
